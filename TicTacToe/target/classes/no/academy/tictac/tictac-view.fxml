@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<GridPane fx:id="gridPane"
+          gridLinesVisible="true" hgap="2" vgap="2"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2"
+          onMouseClicked="#onMouseClick"
+          fx:controller="no.academy.tictac.TicTacToeController">
+</GridPane>
