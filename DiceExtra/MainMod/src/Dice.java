@@ -1,5 +1,3 @@
-package DiceExtra;
-
 public abstract class Dice {
     int numberOfSides;
 

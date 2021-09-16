@@ -1,5 +1,3 @@
-package DiceExtra;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Regular6Dice extends Dice{
