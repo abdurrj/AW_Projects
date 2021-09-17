@@ -1,9 +1,9 @@
 package no.academy.lanterna;
 
 import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.TerminalFactory;
 
 import java.io.IOException;
 
@@ -11,33 +11,76 @@ public class main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        TerminalFactory terminalFactory = new DefaultTerminalFactory();
-        Terminal t = terminalFactory.createTerminal();
-        t.setCursorPosition(1,1);
-        t.putCharacter('A');
-        t.flush();
-        for (int column = 4; column<10;column++){
-            t.setCursorPosition((column), 4);
-            t.putCharacter('X');
+        DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();
+        Terminal terminal = defaultTerminalFactory.createTerminal();
+        terminal.setCursorVisible(false);
+/*        terminal.setCursorPosition(1,1);
+        terminal.putCharacter('A');
+        terminal.flush();
+        for (int column = 4; column<10; column++){
+            terminal.setCursorPosition(column, 4);
+            terminal.putCharacter('X');
         }
-        t.flush();
+        terminal.flush();
 
-        String testString = "This is a tring printed out in Lanterna by iterating over the characters";
-        char[] chArray = testString.toCharArray();
+        String text = "This is a String printed out in Lanterna by iterating over the characters";
+        char[] charArray = text.toCharArray();
+        for (int i = 0; i< charArray.length; i++){
+            terminal.setCursorPosition(i, 8);
+            terminal.putCharacter(charArray[i]);
+        }
+        terminal.flush();*/
 
-        for (int i = 0; i<chArray.length;i++){
-            System.out.println(chArray[i]);
-            t.setCursorPosition((i), 4);
-            t.putCharacter(chArray[i]);
+        int x = 10;
+        int y = 10;
+        final char player = 'X';
+        terminal.setCursorPosition(x, y);
+        terminal.putCharacter(player);
+        boolean continueReadingInput = true;
+        while(continueReadingInput){
+            int xPrevious = x;
+            int yPrevious = y;
+            KeyStroke keyStroke = null;
+            do {
+                Thread.sleep(5);
+                keyStroke = terminal.pollInput();
+            }while(keyStroke==null);
+            KeyType type = keyStroke.getKeyType();
+            Character c = keyStroke.getCharacter();
+            switch(type){
+                case ArrowDown -> {
+                    y++;
+                }
+                case ArrowUp -> {
+                    y--;
+                }
+                case ArrowLeft -> {
+                    x--;
+                }
+                case ArrowRight -> {
+                    x++;
+                }
+            }
+            System.out.println(type);
+            System.out.println(c);
+            terminal.setCursorPosition(x, y);
+            terminal.putCharacter(player);
+            terminal.setCursorPosition(xPrevious, yPrevious);
+            terminal.putCharacter(' ');
+            if (c == Character.valueOf('q')){
+                continueReadingInput = false;
+                System.out.println("quit");
+            }
+            terminal.flush();
+
+            
+
         }
 
-        KeyStroke keyStroke = null;
 
 
-        do {
-            Thread.sleep(5); // might throw InterruptedException
-            keyStroke = t.pollInput();
-        } while (keyStroke == null);
-        t.flush();
+
+
+
     }
 }
