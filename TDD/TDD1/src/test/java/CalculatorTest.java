@@ -28,7 +28,7 @@ public class CalculatorTest {
         assertEquals(2,sut.subtract(5,3));
     }
 
-    @Test(expected = java.lang.Exception.class)
+    @Test(expected = Exception.class)
     public void doesNotSubtractWithNegativeNumber() throws Exception{
         int sumSub = sut.subtract(-1, 4);
     }
