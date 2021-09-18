@@ -15,6 +15,8 @@ public class AmazonProject {
         Book book5 = null;
         Book book6 = null;
         Book book7 = null;
+        ChildrenBook childrenBook = new ChildrenBook(8899,"Minsten", "unknown", 10, 1);
+        Book childBookTest = new ChildrenBook(9900, "Pippi", "Astrid Lindgren", 10, 4);
 
         try{
             book1 = new Book(1122,"Map of Bones", "James Rollins", 30);
@@ -25,21 +27,15 @@ public class AmazonProject {
             book6 = new Book(6677, "HP 3", "J.K. Rowling",10);
             book7 = new Book(-5, "HP 4", "J.K. Rowling",10);
         }
+        // Exception som vi laget (egen fil)
         catch(IncorrectProductIdException e){
             e.printStackTrace();
         }
 
-        ChildrenBook childrenBook = new ChildrenBook(8899,"Minsten", "unknown", 10, 1);
-        Book childBookTest = new ChildrenBook(9900, "Pippi", "Astrid Lindgren", 10, 4);
-
-/*        Movie movie1 = null;
-        Movie movie2 = null;
-        Movie movie3 = null;
-        Movie movie4 = null;
-        Movie movie5 = null;
-        Movie movie6 = null;
-
-
+/*
+        // Så lenge ; skiller dem, kan ting stå på en linje
+        Movie movie1 = null; Movie movie2 = null; Movie movie3 = null;
+        Movie movie4 = null; Movie movie5 = null; Movie movie6 = null;
 
         try {
             movie1 = new Movie(5, "Kung Fu Panda", MovieGenre.COMEDY, 40);
@@ -49,40 +45,21 @@ public class AmazonProject {
             movie5 = new Movie(44, "The Lion King", MovieGenre.DRAMA, 15);
             movie6 = new Movie(-5, "Ghost Busters", MovieGenre.COMEDY, 25);
         }
+        // Standard java exception
         catch(IllegalArgumentException e){
             e.printStackTrace();
-        }*/
-        /*
-
-        Movie[] mArray = new Movie[6];
-        mArray[0] = movie1;
-        mArray[1] = movie2;
-        mArray[2] = movie3;
-        mArray[3] = movie4;
-        mArray[4] = movie5;
-        mArray[5] = movie6;
-
-        for (Movie m : mArray){
-            if (m!=null) {
-                m.printDetails();
-            }
-        }*/
-/*
-
-        List<Movie> movieCatchList = new ArrayList<>();
-        for (int i = 0; i<movieID.length; i++){
-            try{
-                Movie m = new Movie(....)
-                movieCatchList.add(m);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
 
+        Movie[] mArray = new Movie[6];
+        mArray[0] = movie1; mArray[1] = movie2; mArray[2] = movie3;
+        mArray[3] = movie4; mArray[4] = movie5; mArray[5] = movie6;
 
+        for (Movie m : mArray){
+            if (m!=null) {        // Slipper error hvis en/flere av filmene ikke blir laget
+                m.printDetails();
+            }
+        }
 */
-
-
 
         List<Book> bookList = new ArrayList<>();
         bookList.add(book1);
@@ -93,27 +70,26 @@ public class AmazonProject {
         bookList.add(book4);
         bookList.add(book6);
 
-      // Extends and override, standard method and casting
+// Creating product list
+/*
+        List<Movie> movies = new ArrayList<>();
+        movies.add(movie1); movies.add(movie3); movies.add(movie2);
+        movies.add(movie6); movies.add(movie4); movies.add(movie5);
 
-/*        List<Movie> movies = new ArrayList<>();
-        movies.add(movie1);
-        movies.add(movie3);
-        movies.add(movie2);
-        movies.add(movie6);
-        movies.add(movie4);
-        movies.add(movie5);
-
+        // kaller på compareTo fra Movie klassen. sorterer lista med filmer
+        // basert på kriterier satt i Movie klassen
         Collections.sort(movies);
 
+        // Lager ny liste med "Products" ved å ta lista med "Movies"
         List<Product> products = new ArrayList<>(movies);
-
         for (Product p : products){
+            // Print ut detaler om Produktene (som i dette tilfelle bare er filmer, men kunne vært bøker også)
             p.printDetails();
             System.out.println();
-        }*/
+        }
+*/
 
-// Creating product list
-
+// With specific method names
 /*
         for (Product p : productList){
             if (p instanceof Book){
@@ -130,17 +106,16 @@ public class AmazonProject {
             System.out.println();
         }
 */
-// With specific method names
 
+// Looping through product list and printing details
 /*
         for (Product p : productList){
             p.printDetails();
             System.out.println();
         }
 */
-// Looping through product list and printing details
 
-
+// loop through book list
 /*
         for (int i = 0; i<bookList.size(); i++){
             // Hvis objektet er null, gå vi til neste. Velger continue istedenfor
@@ -149,8 +124,8 @@ public class AmazonProject {
             System.out.println();
         }
 */
-// loop through book list
 
+// Searching movie id through Map
 /*
         Map<Long, Movie> movieMap = new HashMap<>();
         movieMap.put(movie1.getProductId(), movie1);
@@ -167,8 +142,8 @@ public class AmazonProject {
             m.printMovieDetails();
         }
 */
-// Searching movie id through Map
 
+// Looping through list, printing movie details
 /*
         List<Movie> movieList = new ArrayList<>();
         movieList.add(movie1);
@@ -182,9 +157,9 @@ public class AmazonProject {
 
             m.printMovieDetails();
         }*/
-// Looping through list, printing movie details
 
-/*      Search movie by ID
+// Searching movie id through list
+/*
         long searchID = 9999;
         Movie m = Movie.findMovieById(searchID,movieList);
 
@@ -196,8 +171,8 @@ public class AmazonProject {
             m.printMovieDetails();
         }
 */
-// Searching movie id through list
 
+// Searching for author
 /*
         System.out.println("Searching for books by J.R.R. Tolkien");
         List<Book> authorBooks = Book.filterByAuthor("J.K. Rowling", bookList);
@@ -206,8 +181,6 @@ public class AmazonProject {
             System.out.println();
         }
 */
-// Searching for author
 
     }
-
 }

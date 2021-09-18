@@ -17,20 +17,23 @@ public class Calculator {
                 System.out.println("Terminating program....");
                 return;
             }
+
             // Spør bruker om ny input hvis input er for kort eller er partall
             while (userInput.length <= 1 || (userInput.length % 2 == 0)) {
                 System.out.print("Expression: ");
                 userInput = input.nextLine().split(" ");
             }
 
-            if (isValid(userInput)){
+            // Hvis brukerens input er gyldig, så utfører den utregning
+            if (inputIsValid(userInput)){
                 calcSum(userInput);
             }
             System.out.println("---------------");
         }
     }
 
-    static boolean isValid(String[] inputArray){
+    // Metode for å sjekke at brukerens input er gyldig
+    static boolean inputIsValid(String[] inputArray){
         for (int i = 0; i < inputArray.length; i++) {
             String check = inputArray[i];
             if (i % 2 != 0) {  // Sjekker oddetallsposisjoner ( operatorer )
@@ -39,7 +42,7 @@ public class Calculator {
                     return false;
                 }
             }
-            else if (i % 2 == 0) { // Sjekker partallsposisjoner ( nummere )
+            else { // Sjekker partallsposisjoner ( nummere )
                 if (!check.matches("-?[0-9]+")) {
                     /*
                     Regex utrykket betyr:
@@ -82,6 +85,7 @@ public class Calculator {
                 inputArray[i + 1] = multiSum;
             }
         } // Ferdig med ganging og deling
+
         /*
         Visualisering på hva som har skjedd:
         inputArray før gange/dele = {2,+,3,*,3,+,1}

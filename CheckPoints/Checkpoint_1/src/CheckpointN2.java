@@ -60,8 +60,10 @@ public class CheckpointN2 {
             // Deretter ny loop for å fjerne siste symbol.
             else if(figurStorrelse<0){
                 for (int j=figurStorrelse;j<0;j++){
-                    output.append("*");
+                    output.append("*"); // Legger til riktig antall stjerner for linja
                 }
+
+                // Skriver ut linja, men fjerner en stjerne for hver gang
                 for (int j = output.length(); j>0; j--){
                     System.out.println(output);
                     output.append("\b");
