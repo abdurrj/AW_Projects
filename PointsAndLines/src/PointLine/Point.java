@@ -1,4 +1,4 @@
-package point;
+package PointLine;
 
 public class Point {
 
@@ -36,18 +36,21 @@ public class Point {
         return pointInfo;
     }
 
+    // Avstand fra punkt til et tilfeldig annet punkt satt av x og y
     public double distance(int x,int y){
         int xDiff=this.x-x;
         int yDiff=this.y-y;
         return Math.sqrt(xDiff*xDiff+yDiff*yDiff);
     }
 
+    // Avstand fra punkt til Origo
     public double distance(){
         int xDiff=this.x;
         int yDiff=this.y;
         return Math.sqrt(xDiff*xDiff+yDiff*yDiff);
     }
 
+    // Avstand mellom to punkter
     public double distance(Point point){
         int xDiff=this.x - point.x;
         int yDiff=this.y - point.y;

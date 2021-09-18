@@ -9,6 +9,7 @@ public class Regular8Dice extends Dice{
     @Override
     public int roll() {
         int[] weightedOptions = new int[]{1,numberOfSides,numberOfSides,numberOfSides,numberOfSides};
+        // tilfeldig velge et av alternativene ovenfra
         int rollResult = ThreadLocalRandom.current().nextInt(0,5);
         return weightedOptions[rollResult];
     }

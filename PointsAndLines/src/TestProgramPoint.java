@@ -1,4 +1,4 @@
-import point.Point;
+import PointLine.Point;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -26,11 +26,12 @@ public class TestProgramPoint {
         return new int[] {Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1])};
     }
 
+
+    /* Method created to check validity of the input.
+    * Using nextInt() will throw an error input!= String
+    * Using String.matches() with regex expression to check
+    * if string is two numbers separated by comma, no spaces.*/
     private static String inputCheck(){
-        /* Method created to check validity of the input.
-        * Using nextInt() will throw an error input!= String
-        * Using String.matches() with regex expression to check
-        * if string is two numbers separated by comma, no spaces.*/
         Scanner sc = new Scanner(System.in);
         String userInput = sc.next();
         while(!userInput.matches("[0-9]+,[0-9]+")){

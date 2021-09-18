@@ -10,13 +10,15 @@ public class Room {
         this.length = length;
     }
 
+
     public void printDetails(){
         System.out.println("Room: " + name);
         System.out.println("Width and length: " + width + " x " + length + " m");
         System.out.println("Area: " + width*length + "m²");
     }
 
-// Setters and getters, but not needed
+
+// Setters and getters. Kommentert ut fordi vi ikke bruker de. Kun her for øvelse
 /*
     public String getName() {
         return name;

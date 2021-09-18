@@ -1,14 +1,13 @@
-import point.Point;
-import point.TenPoints;
+import PointLine.Point;
+import PointLine.TenPoints;
 
 public class TestTenPoint {
 
     public static void main(String[] args) {
-        TenPoints tenPoints = new TenPoints();
-        Point[] pointArray = tenPoints.tenPoints();
+        Point[] pointArray = TenPoints.tenPoints();
 
         for (int i = 0; i< pointArray.length; i++){
-            System.out.print("Point "+(i+1)+": ");
+            System.out.print("PointLine.Point "+(i+1)+": ");
             System.out.println(pointArray[i].toString());
             System.out.println();
         }

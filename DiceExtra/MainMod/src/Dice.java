@@ -1,3 +1,6 @@
+
+
+// Et generelt objekt "Terning", derfor abstract
 public abstract class Dice {
     int numberOfSides;
 
@@ -13,9 +16,13 @@ public abstract class Dice {
         }
     }
 
+    // Hvis vi ønsker å hente informasjon om hvor mange sider terningen har
     public int getNumberOfSides() {
         return numberOfSides;
     }
 
+    // Legger inn en abstract fuksjon roll
+    // Så vi kan kalle på den på alle terninger, uavhengig av type
+    // enten det er vanlig terning eller jukseterning
     public abstract int roll();
 }

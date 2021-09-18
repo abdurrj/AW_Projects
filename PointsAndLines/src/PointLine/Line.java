@@ -1,4 +1,4 @@
-package point;
+package PointLine;
 
 public class Line {
 

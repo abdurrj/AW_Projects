@@ -1,8 +1,9 @@
-package point;
+package PointLine;
 
 public class TenPoints {
 
-    public Point[] tenPoints(){
+
+    public static Point[] tenPoints(){
 
         Point[] pointsArray = new Point[10];
         for (int i = 0; i<10; i++){

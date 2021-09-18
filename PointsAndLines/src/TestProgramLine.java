@@ -1,5 +1,5 @@
-import point.Line;
-import point.Point;
+import PointLine.Line;
+import PointLine.Point;
 
 public class TestProgramLine {
 
@@ -22,10 +22,10 @@ public class TestProgramLine {
             System.out.println("The lines have equal length");
         }
         else if (lineDiff>0.0) {
-            System.out.println("Line A is longer than Line B");
+            System.out.println("PointLine.Line A is longer than PointLine.Line B");
         }
         else {
-            System.out.println("Line B is longer than Line A");
+            System.out.println("PointLine.Line B is longer than PointLine.Line A");
         }
     }
 
