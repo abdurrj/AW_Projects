@@ -1,4 +1,4 @@
-
+package YatziGame;
 
 // Et generelt objekt "Terning", derfor abstract
 public abstract class Dice {

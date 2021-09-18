@@ -1,6 +1,10 @@
+package YatziGame;
+
+import YatziGame.Dice;
+
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Regular8Dice extends Dice{
+public class Regular8Dice extends Dice {
 
     public Regular8Dice(){
         super(8);

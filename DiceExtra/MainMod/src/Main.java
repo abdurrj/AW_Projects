@@ -1,3 +1,7 @@
+import YatziGame.Dice;
+import YatziGame.Regular6Dice;
+import YatziGame.Regular8Dice;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +17,7 @@ public class Main {
 
         System.out.println("\n");
 
-        // Lager en liste som skal holde objekter av type Dice
+        // Lager en liste som skal holde objekter av type YatziGame.Dice
         // Looper igjennom, første 50000 er vanlig regular6Dice, siste 50000 er regular8Dice
         List<Dice> manyDice = new ArrayList<>();
         for (int i = 0; i<100000; i++){
