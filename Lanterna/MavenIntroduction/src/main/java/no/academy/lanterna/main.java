@@ -5,6 +5,7 @@ import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
+import javax.sound.sampled.Line;
 import java.io.IOException;
 
 public class main {
@@ -14,7 +15,9 @@ public class main {
         DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();
         Terminal terminal = defaultTerminalFactory.createTerminal();
         terminal.setCursorVisible(false);
-/*        terminal.setCursorPosition(1,1);
+
+/*
+        terminal.setCursorPosition(1,1);
         terminal.putCharacter('A');
         terminal.flush();
         for (int column = 4; column<10; column++){
@@ -37,6 +40,12 @@ public class main {
         terminal.setCursorPosition(x, y);
         terminal.putCharacter(player);
         boolean continueReadingInput = true;
+        VerticalLine vline = new VerticalLine(5, 15, 10);
+        drawVertLine(vline, terminal);
+        terminal.flush();
+
+
+
         while(continueReadingInput){
             int xPrevious = x;
             int yPrevious = y;
@@ -73,14 +82,16 @@ public class main {
             }
             terminal.flush();
 
-            
-
         }
 
+    }
 
 
-
-
-
+    public static void drawVertLine(VerticalLine line, Terminal terminal) throws IOException {
+        for (int i = 0; i<line.length; i++){
+            terminal.setCursorPosition(line.xStartPos, line.yStartPos+i);
+            terminal.putCharacter(line.block);
+        }
+        terminal.flush();
     }
 }
