@@ -39,36 +39,8 @@ public class GameBoard extends JFrame {
             lineList.addAll(BoxMaker(2, 10, i, 7));
             lineList.addAll(BoxMaker(2, 10, i, 19));
             lineList.addAll(BoxMaker(2, 10, i, 15));
+            lineList.addAll(BoxMaker(4, 4, i+3, 10));
         }
-/*        List<Line> boxUpperLeftCornerFat = BoxMaker(2, 10,6, 3);
-        List<Line> boxUpperLeftCornerThin = BoxMaker(1, 10,6, 6);
-        List<Line> boxLowerLeft2 = BoxMaker(1, 10,6, 17);
-        List<Line> boxLowerLeft1 = BoxMaker(2, 10,6, 19);
-        List<Line> boxUpperLeft3 = BoxMaker(2, 10,19, 3);
-        List<Line> boxUpperLeft4 = BoxMaker(1, 10,19, 6);
-        List<Line> boxLowerLeft3 = BoxMaker(1, 10,19, 17);
-        List<Line> boxLowerLeft4 = BoxMaker(2, 10,19, 19);
-        List<Line> wallExtendLeft = BoxMaker(6, 16, 0, 9);
-        List<Line> boxLowerLeft = BoxMaker(4, 3,4, 4);
-        List<Line> boxUpperRight = BoxMaker(6,3, 40, 4);
-        List<Line> boxLowerRight = BoxMaker(4,3, 40, 17);
-
-
-        // Add to list
-        lineList.addAll(boxUpperLeftCornerFat);
-        lineList.addAll(boxUpperLeftCornerThin);
-        lineList.addAll(boxLowerLeft2);
-        lineList.addAll(boxLowerLeft1);
-        lineList.addAll(wallExtendLeft);
-        lineList.addAll(boxUpperLeft3);
-        lineList.addAll(boxUpperLeft4);
-        lineList.addAll(boxLowerLeft3);
-        lineList.addAll(boxLowerLeft4);*/
-
-//        lineList.addAll(boxLowerLeft);
-//        lineList.addAll(boxLowerRight);
-//        lineList.addAll(boxUpperRight);
-
 
         // Add walls to wall list
         lineList.add(lWall);
@@ -77,8 +49,6 @@ public class GameBoard extends JFrame {
         lineList.add(rWallB);
         lineList.add(upperWall);
         lineList.add(lowerWall);
-
-
 
         return lineList;
     }

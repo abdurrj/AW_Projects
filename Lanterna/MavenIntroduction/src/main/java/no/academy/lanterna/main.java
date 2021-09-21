@@ -7,10 +7,13 @@ package no.academy.lanterna;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+
+import javax.swing.text.Position;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,10 +63,10 @@ public class main {
 //                TextColor.ANSI.values()[random.nextInt(TextColor.ANSI.values().length)]));
 
 
+
         terminal.setCursorPosition(x, y);
         terminal.putCharacter(player);
         boolean continueReadingInput = true;
-
 
         List<Line> lineList = GameBoard.MapMaker(terminal);
 
