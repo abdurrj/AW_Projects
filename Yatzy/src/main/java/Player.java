@@ -1,10 +1,11 @@
 import ErrorHandling.IncorrectInitialsLengthException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     String playerInitials;
-    List<Dice> throwingDice;
+    List<Dice> throwingDice = new ArrayList<>();
 
 
     public Player(String playerInitials) throws IncorrectInitialsLengthException {
