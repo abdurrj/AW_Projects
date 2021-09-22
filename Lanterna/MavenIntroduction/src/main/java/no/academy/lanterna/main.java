@@ -1,20 +1,18 @@
 //Figuren bør ha 3 liv - som countes.
 //Vi må ha en count for highScore som countes er spiste enhet + x antall poeng for flagg.
-
-
 package no.academy.lanterna;
 
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
-import com.googlecode.lanterna.TextColor;
+
+import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
+import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
-import javax.swing.text.Position;
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,101 +24,186 @@ public class main {
 
         //Lag terminal og skjul cursor
         DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();
+        defaultTerminalFactory.setTerminalEmulatorFontConfiguration(SwingTerminalFontConfiguration.getDefaultOfSize(18));
+        TerminalSize terminalSize = new TerminalSize(80, 24);
+        defaultTerminalFactory.setInitialTerminalSize(terminalSize);
         Terminal terminal = defaultTerminalFactory.createTerminal();
+//        Font myFont = new Font("Serif", Font.BOLD, 12);
+//        AWTTerminalFontConfiguration.newInstance(myFont);
+//        defaultTerminalFactory.setTerminalEmulatorFontConfiguration(AWTTerminalFontConfiguration.newInstance(myFont));
+
+        Screen screen = new TerminalScreen(terminal);
+        TextGraphics textGraphics = screen.newTextGraphics();
+        screen.startScreen();
+
+//        textGraphics.putString(2,1, "Hei", SGR.BLINK);
+        //Thread.sleep(2000);
+
+        KeyStroke startKeyStroke = null;
+        boolean startReadingInput = true;
+
+        while(startReadingInput) {
+            do {
+                String info = "Bli kvitt gruff ved å drikke kaffekoppene.";
+                String info2 = "Men pass deg for slitsomme kollegaer...";
+                textGraphics.setForegroundColor(TextColor.ANSI.WHITE);
+                textGraphics.putString(32, 6, "Morgengretten ☹   ", SGR.BOLD);
+                textGraphics.putString(20, 8, info, SGR.ITALIC);
+                textGraphics.putString(20, 9, info2, SGR.ITALIC);
+
+                textGraphics.putString(28, 12, "Trykk spacebar for å starte!", SGR.BLINK);
+                textGraphics.putString(28, 13, "Trykk q for å avslutte!", SGR.BLINK);
+
+                screen.refresh();
+                startKeyStroke = terminal.pollInput();
+            } while (startKeyStroke == null);
+            Character cStart = startKeyStroke.getCharacter();
+
+            if (cStart == Character.valueOf(' ')) {
+                startReadingInput = false;
+                System.out.println("Starting game");
+                terminal.clearScreen();
+            }
+            if (cStart == Character.valueOf('q')) {
+                startReadingInput = false;
+                System.out.println("Ending game..");
+                terminal.close();
+                System.exit(0);
+            }
+        }
+
+        terminal.resetColorAndSGR();
+
+        terminal.flush();
         terminal.setCursorVisible(false);
-//        terminal.setBackgroundColor(TextColor.ANSI.MAGENTA);
-
-        //Sett opp en player character og plasser den random et sted
-
-//        TerminalSize terminalSize = terminal.getTerminalSize();
-//        for (int col = 0; col < terminalSize.getColumns(); col++) {
-//            for (int row = 0; row < terminalSize.getRows(); row++ ) {
-//                terminal.putCharacter(col, row, new TextCharacter(
-//                        ' ', TextColor.ANSI.DEFAULT, TextColor.ANSI.values()[
-//                                Random.nextInt(TextColor.ANSI.values().length)]
-//                ));
-//            }
-//        }
 
 
+        //Sett opp en player2 character og plasser den random et sted
 
-        int terminalSizeX = terminal.getTerminalSize().getRows();
-        int terminalSizeY = terminal.getTerminalSize().getColumns();
         int x = 6;
         int y = 7;
-        final char player = 'X';
+//        final char player2 = '\u2639';
+
+        UserPlayer player = new UserPlayer(6, 7);
 
 
 
+        terminal.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);
+        terminal.setCursorPosition(player.xPos, player.yPos);
+        terminal.putCharacter(player.playerChar);
 
 
-//                TextColor.ANSI.DEFAULT,
-//                // This will pick a random background color
-//        screen.setCharacter(column, row, new TextCharacter(
-//                ' ',
-//                TextColor.ANSI.DEFAULT,
-//                // This will pick a random background color
-//                TextColor.ANSI.values()[random.nextInt(TextColor.ANSI.values().length)]));
-
-
-
-        terminal.setCursorPosition(x, y);
-        terminal.putCharacter(player);
         boolean continueReadingInput = true;
-
         List<Line> lineList = GameBoard.MapMaker(terminal);
 
 
-        // Lag en liste med bomber, velg antall bomber som er ønsket
-        List<Bomb> bombList = makeBomb(5);
+        List<CoWorker> coWorkerList = makeGhosts(1, terminal, lineList);
 
         // tegn inn bomber og linjer (egne funksjoner)
-        drawBomb(bombList, terminal);
-
         drawLine(lineList, terminal);
-
         terminal.flush();
 
+        int cupScore = 0;
+        int numOfCups = 0;
 
+        TextColor.ANSI veggFarge = TextColor.ANSI.BLACK_BRIGHT;
+
+
+        Coffee coffeeCup = new Coffee(73, 21);
+        terminal.setForegroundColor(TextColor.ANSI.WHITE_BRIGHT);
+        terminal.setCursorPosition(coffeeCup.xPos, coffeeCup.yPos);
+        terminal.putCharacter(coffeeCup.coffeCup);
+        terminal.flush();
         while(continueReadingInput){
-            int xPrevious = x;
-            int yPrevious = y;
+            terminal.setCursorVisible(false);
+            String score = "Cups of coffee: " + cupScore;
+
+            textGraphics.setBackgroundColor(veggFarge);
+            textGraphics.setForegroundColor(TextColor.ANSI.WHITE_BRIGHT);
+            textGraphics.putString(33, 0, "High Score: " + cupScore, SGR.BOLD);
+            screen.refresh();
+            terminal.resetColorAndSGR();
+            terminal.setCursorVisible(false);
+
+            for (CoWorker coWorker : coWorkerList){
+                terminal.setForegroundColor(TextColor.ANSI.RED_BRIGHT);
+                terminal.setCursorPosition(coWorker.xPos, coWorker.yPos);
+                terminal.putCharacter(coWorker.ghostChar);
+            }
+            terminal.flush();
+
+
+            int xPrevious = player.xPos;
+            int yPrevious = player.yPos;
             KeyStroke keyStroke = null;
+
             do {
                 Thread.sleep(5);
                 keyStroke = terminal.pollInput();
             }while(keyStroke==null);
+
             KeyType type = keyStroke.getKeyType();
             Character c = keyStroke.getCharacter();
             switch(type){
-                case ArrowDown -> y++;
-                case ArrowUp ->   y--;
-                case ArrowLeft -> x--;
-                case ArrowRight-> x++;
+                case ArrowDown -> {player.yPos++;}
+                case ArrowUp ->   {player.yPos--;}
+                case ArrowLeft -> {player.xPos--;}
+                case ArrowRight-> {player.xPos++;}
+            }
+            if (x!=xPrevious || y!= yPrevious){
+                for (CoWorker g : coWorkerList){
+                    terminal.setForegroundColor(TextColor.ANSI.RED_BRIGHT);
+                    g.moveGhost(g, terminal, 1, player, lineList, coffeeCup);
+                    terminal.flush();
+                }
             }
 
-            terminal.setCursorPosition(x, y);
+            terminal.setCursorPosition(player.xPos, player.yPos);
             if (isWall(lineList, terminal)){ // If wall
                 terminal.setCursorPosition(xPrevious,yPrevious); // Ikke gå
-                x = xPrevious; y = yPrevious;
+                player.xPos = xPrevious; player.yPos = yPrevious;
             }
             else{
-                terminal.putCharacter(player);
+                terminal.setForegroundColor(TextColor.ANSI.YELLOW_BRIGHT);
+                terminal.putCharacter(player.playerChar);
                 terminal.setCursorPosition(xPrevious, yPrevious);
                 terminal.putCharacter(' ');
             }
-            if (isBomb(bombList, terminal)){ // if Bomb
-                continueReadingInput = false; // slutt å lese input
-                System.out.println("Oh no! You hit a bomb!");
+
+            if (isGhost(coWorkerList, player)){
+                continueReadingInput = false;
+            }
+            if (isGoal(player, coffeeCup)){
+                cupScore++;
+                System.out.println(cupScore);
+                terminal.setForegroundColor(TextColor.ANSI.WHITE_BRIGHT);
+                coffeeCup.RelocateCoffee(terminal, lineList, coWorkerList);
+                numOfCups++;
+                if (numOfCups==4){
+                    coWorkerList.add(new CoWorker(2,1));
+                    numOfCups=0;
+                }
+
             }
             if (c == Character.valueOf('q')){
                 continueReadingInput = false;
                 System.out.println("quit");
             }
             terminal.flush();
-
         }
 
+        Thread.sleep(1000);
+        terminal.resetColorAndSGR();
+        terminal.clearScreen();
+
+        textGraphics.enableModifiers(SGR.BOLD);
+        textGraphics.setBackgroundColor(TextColor.ANSI.BLACK);
+        textGraphics.setForegroundColor(TextColor.ANSI.WHITE_BRIGHT);
+        TextGraphics endScreen = textGraphics.drawRectangle(new TerminalPosition(30, 9),new TerminalSize(20, 5), '*');
+
+        textGraphics.putString(32, 10, "G A M E  O V E R", SGR.BLINK, SGR.BOLD);
+        textGraphics.putString(34, 12, "Score: "+cupScore, SGR.BOLD);
+        screen.refresh();
     }
 
 
@@ -140,7 +223,6 @@ public class main {
                 int tCol = terminal.getCursorPosition().getColumn();
                 int[] linePos = line.linePos[i];
                 if (tRow == linePos[1] && tCol == linePos[0]) {
-                    System.out.println("WALL!");
                     return true; // Hvis det er vegg, returner true (if wall sjekke oppe)
                 }
             }
@@ -154,7 +236,6 @@ public class main {
             int tRow = terminal.getCursorPosition().getRow();
             int tCol = terminal.getCursorPosition().getColumn();
             if (tRow ==  b.getY() && tCol == b.getX()){
-                System.out.println("Ka-boom");
                 return true;
             }
         }
@@ -162,23 +243,74 @@ public class main {
     }
 
     // Lage bomber og gi en liste med bomber
-    public static List<Bomb> makeBomb(int amount){
+    public static List<Bomb> makeBomb(int amount, Terminal terminal, List<Line> lineList) throws IOException {
         List<Bomb> bombList = new ArrayList<>();
         for (int i = 0; i<amount; i++){
             Random r = new Random();
-            Bomb bomb = new Bomb(r.nextInt(80), r.nextInt(24));
+            int x = r.nextInt(80);
+            int y = r.nextInt(24);
+            terminal.setCursorPosition(x, y);
+            while(isWall(lineList, terminal)) {
+                x = r.nextInt(80);
+                y = r.nextInt(24);
+                terminal.setCursorPosition(x,y);
+            }
+            Bomb bomb = new Bomb(x, y);
             bombList.add(bomb);
         }
         return bombList;
     }
 
-    public static void drawBomb(List<Bomb> bombList, Terminal terminal) throws IOException {
-        for (Bomb b : bombList){
-            int[] pos = new int[]{b.getX(), b.getX()};
-            terminal.setCursorPosition(pos[0], pos[1]);
-            terminal.putCharacter('O');
+    public static List<CoWorker> makeGhosts(int amount, Terminal terminal, List<Line> lineList) throws IOException {
+        List<CoWorker> coWorkerList = new ArrayList<>();
+        for (int i = 0; i<amount;i++){
+            Random r = new Random();
+            int x = r.nextInt(80);
+            int y = r.nextInt(24);
+            terminal.setCursorPosition(x, y);
+            while(isWall(lineList, terminal)) {
+                x = r.nextInt(80);
+                y = r.nextInt(24);
+                terminal.setCursorPosition(x, y);
+            }
+            CoWorker coWorker = new CoWorker(x, y);
+            coWorkerList.add(coWorker);
         }
+        return coWorkerList;
     }
 
+
+    public static boolean isGhost(List<CoWorker> coWorkerList, UserPlayer player){
+        for (CoWorker g : coWorkerList){
+            if (g.xPos == player.xPos && g.yPos == player.yPos){
+                System.out.println("OMNOMNOMNOM");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isGhost(List<CoWorker> coWorkerList, int x, int y){
+        for (CoWorker g : coWorkerList){
+            if (g.xPos == x && g.yPos == y){
+                System.out.println("OMNOMNOMNOM");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isGoal(UserPlayer player,Coffee coffeeCup){
+        if (player.xPos == coffeeCup.xPos && player.yPos == coffeeCup.yPos){
+            return true;
+        }
+        return false;
+    }
+    public static boolean isGoal(int x, int y,Coffee coffeeCup){
+        if (x == coffeeCup.xPos && y == coffeeCup.yPos){
+            return true;
+        }
+        return false;
+    }
 
 }

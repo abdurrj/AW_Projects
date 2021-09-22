@@ -3,10 +3,10 @@ package no.academy.lanterna;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class GameBoard extends JFrame {
 
@@ -21,8 +21,10 @@ public class GameBoard extends JFrame {
 
     public static List<Line> MapMaker(Terminal terminal) throws IOException {
         List<Line> lineList = new ArrayList<>();
-        int terminalSizeX = terminal.getTerminalSize().getRows();
-        int terminalSizeY = terminal.getTerminalSize().getColumns();
+//        int terminalSizeX = terminal.getTerminalSize().getRows();
+        int terminalSizeX = 24;
+//        int terminalSizeY = terminal.getTerminalSize().getColumns();
+        int terminalSizeY = 80;
 
         // Walls
         Line lWall = new VerticalLine(terminalSizeY, 1, 0);
@@ -32,7 +34,6 @@ public class GameBoard extends JFrame {
         Line upperWall = new HorizontalLine(terminalSizeY, 0, 0);
         Line lowerWall = new HorizontalLine(terminalSizeY, 0, terminalSizeX - 1);
 
-        // Maze
         // Boxes
         for (int i = 9; i<terminalSizeY-13;i+=13){
             lineList.addAll(BoxMaker(2, 10, i, 3));

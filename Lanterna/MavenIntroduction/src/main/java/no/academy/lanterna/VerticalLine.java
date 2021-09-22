@@ -1,8 +1,10 @@
 package no.academy.lanterna;
 
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import java.io.IOException;
+
 
 public class VerticalLine extends Line{
 
@@ -20,6 +22,7 @@ public class VerticalLine extends Line{
 
     public void makeLine(Line line, Terminal terminal) throws IOException {
         for (int i = 0; i<line.length;i++){
+            terminal.setForegroundColor(TextColor.ANSI.BLACK_BRIGHT);
             terminal.setCursorPosition(line.xStartPos, line.yStartPos + i);
             terminal.putCharacter(line.block);
         }
