@@ -9,4 +9,6 @@ public class UserPlayer {
         this.xPos = xPos;
         this.yPos = yPos;
     }
+
+
 }

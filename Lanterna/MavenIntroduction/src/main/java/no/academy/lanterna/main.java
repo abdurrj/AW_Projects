@@ -28,16 +28,11 @@ public class main {
         TerminalSize terminalSize = new TerminalSize(80, 24);
         defaultTerminalFactory.setInitialTerminalSize(terminalSize);
         Terminal terminal = defaultTerminalFactory.createTerminal();
-//        Font myFont = new Font("Serif", Font.BOLD, 12);
-//        AWTTerminalFontConfiguration.newInstance(myFont);
-//        defaultTerminalFactory.setTerminalEmulatorFontConfiguration(AWTTerminalFontConfiguration.newInstance(myFont));
 
         Screen screen = new TerminalScreen(terminal);
         TextGraphics textGraphics = screen.newTextGraphics();
         screen.startScreen();
 
-//        textGraphics.putString(2,1, "Hei", SGR.BLINK);
-        //Thread.sleep(2000);
 
         KeyStroke startKeyStroke = null;
         boolean startReadingInput = true;
@@ -78,11 +73,8 @@ public class main {
         terminal.setCursorVisible(false);
 
 
-        //Sett opp en player2 character og plasser den random et sted
-
         int x = 6;
         int y = 7;
-//        final char player2 = '\u2639';
 
         UserPlayer player = new UserPlayer(6, 7);
 
