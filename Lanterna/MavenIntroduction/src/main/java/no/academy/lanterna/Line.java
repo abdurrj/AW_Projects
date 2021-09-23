@@ -17,7 +17,19 @@ public abstract class Line {
         this.yStartPos = yStartPos;
     }
 
+    /**
+     * Make every point of the wall to an array. The array is for wall check
+     * @param xStartPos starting row
+     * @param yStartPos starting columt
+     * @param length length of the line
+     */
     abstract void makeArray(int xStartPos, int yStartPos, int length);
 
+
+    /**
+     * Method to draw the line inn on the game board
+     * @param line is the Line object to draw in
+     * @param terminal that is running the game
+     * */
     public abstract void makeLine(Line line, Terminal terminal) throws IOException;
 }

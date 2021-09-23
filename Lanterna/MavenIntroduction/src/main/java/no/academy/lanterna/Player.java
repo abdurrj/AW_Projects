@@ -1,14 +1,13 @@
 package no.academy.lanterna;
 
-public class UserPlayer {
+public class Player {
     int xPos;
     int yPos;
     char playerChar =  '\u25CF';
 
-    public UserPlayer(int xPos, int yPos) {
+    public Player(int xPos, int yPos) {
         this.xPos = xPos;
         this.yPos = yPos;
     }
-
 
 }

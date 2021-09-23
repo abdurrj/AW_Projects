@@ -6,10 +6,12 @@ import java.io.IOException;
 
 public class HorizontalLine extends Line {
 
+
     public HorizontalLine(int length, int xStartPos, int yStartPos) {
         super(length, xStartPos, yStartPos);
         makeArray(xStartPos, yStartPos, length);
     }
+
 
     protected void makeArray(int xStartPos, int yStartPos, int length){
         super.linePos = new int[length][2];
