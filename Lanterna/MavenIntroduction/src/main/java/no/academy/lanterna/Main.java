@@ -1,7 +1,7 @@
 //Figuren bør ha 3 liv - som countes.
 //Vi må ha en count for highScore som countes er spiste enhet + x antall poeng for flagg.
-package no.academy.lanterna;
 
+package no.academy.lanterna;
 
 import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.graphics.TextGraphics;
