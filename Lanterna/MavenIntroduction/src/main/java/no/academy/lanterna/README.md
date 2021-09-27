@@ -29,4 +29,5 @@ ___________________
 -
 AW Academy Java for Accenture Høst 2021
 
-Gruppe: Ambitious Interactions
+Gruppe: Ambitious Interactions for åha laget prosjektet.
+Gruppe: To korte en lang for Code review
