@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campsite</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    
+    html h1{
+      font-family: "Archivo Black", sans-serif;
+    }
+    html{
+      font-family: Roboto, sans-serif;
+      background-color: #FAF4F2;
+    }
+  
+    *{
+      box-sizing: border-box;
+    }
+  
+    header{
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      background-color: #310303;
+      min-height: 700px;
+      color: white;
+    }
+  
+    #site-nav{
+      margin: 0 auto;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 85%;
+    }
+    #site-nav a{
+      color: white;
+      font-family: Roboto, sans-serif;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+    
+    #nav-elements{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    
+    #nav-elements a{
+      width: 120px;
+      text-align: center;
+      align-items: flex-start;
+    }
+    
+    #signup{
+      font-weight: bold;
+      padding: 10px;
+    }
+    #title-area{
+      margin: 70px auto;
+      text-align: center;
+      max-width: 50%;
+    }
+    
+    #title-area h1{
+      font-size: 81px;
+      margin-bottom: 0;
+    }
+    #title-area p{
+      margin: 20px auto;
+      font-size: 18px;
+      max-width: 75%;
+    }
+    
+    #discover{
+      background-color: #E76F51;
+      font-family: Roboto, sans-serif;
+      font-size: 18px;
+      border: none;
+      color: white;
+      border-radius: 15px;
+      padding: 10px 40px;
+      margin-bottom: 50px;
+    }
+    
+    body{
+      margin: 0 auto;
+    }
+
+    #pictures-set1{
+      margin: -100px auto -20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      max-width: 1518px;
+      text-align: center;
+    }
+    #pictures-set1 figure{
+      margin:10px 5px;
+      flex-direction: column;
+      width: 357px;
+      height: 312px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px
+    }
+    
+    #pictures-set1 img{
+      width: 90px;
+      height: 90px; /*Temporary*/
+    }
+    
+    /*Main area formatting*/
+    
+    #main-area{
+      background-color: #FAF4F2;
+      margin: 0 auto;
+      
+    }
+    #destination{
+      margin: 100px auto 100px;
+      text-align: center;
+    }
+
+    #galleryset{
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1518px;
+      align-self: center;
+    }
+    
+    .gallery-pic{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      margin: 10px auto;
+      padding: 20px 10px 20px 10px;
+      width: 357px;
+      height: 465px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    
+    .gallery-pic p{
+      width: 277px;
+    }
+    
+    .gallery-pic button{
+      height: 40px;
+      width: 150px;
+      background-color: lightgray;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      margin-top: 50px;
+    }
+    
+    #galleryset img{
+      height: 180px;
+      width: 277px;
+    }
+    
+    #viewall-box{
+      padding: 50px;
+      margin: 10px auto;
+      text-align: center;
+    }
+    
+    #viewall{
+      margin: 10px auto;
+      padding: 20px 40px;
+      background-color: orange;
+      color: white;
+    }
+    
+    #mobilesite{
+      display: none;
+    }
+
+    @media screen and (max-width: 500px){
+      header{
+        min-height: 200px;
+      }
+      #title-area h1{
+        font-size: 30px;
+      }
+      #nav-elements{
+        visibility: hidden;
+      }
+      #fullsite {
+        /*position: absolute;*/
+        display: none;
+      }
+      #mobilesite{
+        display: block;
+        margin:100px
+      }
+      #site-nav{
+        height: 80px;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+<header>
+  <nav id="site-nav">
+    <div id="nav-elements">
+      <a href="#">Home</a>
+      <a href="#">Destination</a>
+      <a href="#">Near me</a>
+      <a href="#">Events</a>
+      <a href="#">Blog</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <a href="#">Contact us</a>
+    </div>
+    <div id="signup-element">
+      <a id="signup" href="#">Sign up</a>
+    </div>
+  </nav>
+  
+  <div id="title-area">
+    <h1>Find Yourself Outside.</h1>
+    <p id="fullsite">Book unique camping experiences on over 300,000 campsites, cabins, RV parks, public parks and more.</p>
+    <p id="mobilesite">Unique camping experiences on our campsites!</p>
+    <button id="discover">Discover</button>
+  </div>
+</header>
+
+
+  <div id="pictures-set1">
+    <figure id="camp">
+        <img src="Assets/bonfire.png" alt="Bonfire">
+        <h2>Camping & Day Use</h2>
+        <p>Return to your favorite spot or discover a new one that’s right for you. </p>
+    </figure>
+    <figure id="tours">
+        <img src="Assets/tickets.png" alt="Ticket">
+        <h2>Tours & Tickets</h2>
+        <p>Reserve tours and tickets to participate in events.</p>
+    </figure>
+    <figure id="permits">
+        <img src="Assets/permit.png" alt="Permits">
+        <h2>Permits</h2>
+        <p>Obtain permits for access to high-demand locations.</p>
+    </figure>
+    <figure id="activities">
+        <img src="Assets/fishing.png" alt="Fishing">
+        <h2>Recreation Activities</h2>
+        <p>Find the best spots for hunting, fishing & recreational shooting.</p>
+    </figure>
+  </div>
+  <div id="main-area">
+    <section id="destination">
+      <img id="destination-img" src="Assets/destination.png">
+      <h2>Explore Destinations & Activities</h2>
+    </section>
+    <div id="galleryset">
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-1.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-2.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-3.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-4.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-5.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-6.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-7.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-8.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-9.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-10.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-11.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+      <div class="gallery-pic">
+        <img src="Assets/z-nature-12.png">
+        <h3>Trickle Creek Ranch</h3>
+        <p>Book unique camping experiences on over 300,000 campsites.</p>
+        <button>Read More</button>
+      </div>
+    </div>
+
+  </div>
+<div id="viewall-box">
+  <button id="viewall">View all</button>
+</div>
+</body>
+</html>
