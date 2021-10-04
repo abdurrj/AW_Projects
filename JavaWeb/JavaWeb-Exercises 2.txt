@@ -1,0 +1,31 @@
+Java Web 2: Øvelser - HTTP
+
+________________________________________________________
+Oppgave 1 - Curl
+
+$ curl -v www.vg.no
+*   Trying 195.88.54.16:80...
+* Connected to www.vg.no (195.88.54.16) port 80 (#0)
+> GET / HTTP/1.1
+> Host: www.vg.no
+> User-Agent: curl/7.78.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 301 Moved
+< Date: Mon, 04 Oct 2021 08:01:15 GMT
+< Server: Varnish
+< X-Varnish: 808265221
+< location: https://www.vg.no/
+< Content-Length: 0
+< Connection: keep-alive
+<
+* Connection #0 to host www.vg.no left intact
+
+________________________________________________________
+Oppgave 2 - HTTPBin.org
+
+https://httpbin.org/ oppgaver her
+
+________________________________________________________
+Oppgave 3 - 

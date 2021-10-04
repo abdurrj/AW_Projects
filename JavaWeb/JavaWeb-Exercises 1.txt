@@ -1,0 +1,62 @@
+Java Web 1: Øvelser - Internett
+
+________________________________________________________
+Oppgave 1 -  Finn lokale IP-adresse:
+
+Utført via metode A og B
+192.168.15.125
+
+________________________________________________________
+Oppgave 2 - Finn din offentlige IP-adresse
+
+212.125.246.230
+
+
+________________________________________________________
+Oppgave 3 - Ping
+
+ping www.vg.no-->
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Minimum  = 2ms, Maximum = 125ms, Average = 35ms
+
+ping www.canberra100.com.au
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Minimum = 120ms, Maximum = 222ms, Average = 148ms
+
+I snitt 113ms lengere til canberra100 enn til vg.
+
+________________________________________________________
+Oppgave 4 - Traceroute
+
+  1     9 ms     3 ms     4 ms  192.168.12.1
+  2     5 ms     2 ms     3 ms  212.125.246.225
+  3     4 ms     7 ms     2 ms  93.124.193.160
+  4     3 ms     2 ms     3 ms  ae1-0.san-peer2.osl.no.ip.tdc.net
+								[85.19.122.217]
+  5     4 ms     1 ms     2 ms  oso-b1-link.ip.twelve99.net
+								[62.115.186.66]
+  6     *        *      454 ms  cloudflare-ic315169-oso-b1.ip.twelve99-cust.net
+								[62.115.38.130]
+  7    51 ms    22 ms     2 ms  104.18.13.138
+  
+  7 Hopp til vg.
+  
+________________________________________________________
+Oppgave 5 - Revers DNS-Oppslag
+
+Søkte: 62.115.186.66
+Resultat: oso-b1-link.ip.twelve99.net (Matcher)
+
+Søkte: 85.19.122.217
+Resultat: ae1-0.san-peer2.osl.no.ip.tdc.net (Matcher)
+
+________________________________________________________
+Oppgave 6 -  Hva er CDN?
+
+CDN - Content Delivery Network
+
+Mellomlagringsservere
+Brukere kobler seg til disse for raskere tilgang siden disse
+ikke er "origin" men kan ligge geografisk nærmere brukeren.
+Inneholder samme som origin. 
+Letter også på load på origin serveren.
