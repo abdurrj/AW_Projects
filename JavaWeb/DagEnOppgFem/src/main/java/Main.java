@@ -1,15 +1,16 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-
+@Configuration
+@ComponentScan
 public class Main {
 
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("src.main.java.Main.com.payment");
-        System.out.println(context);
+        context.getApplicationName();
 
-//        WebShop ws = new WebShop(context.@ComponentScan("PayPalMethod"));
 
     }
 
