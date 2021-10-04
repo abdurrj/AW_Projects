@@ -6,9 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.payment");
+        ApplicationContext context = new AnnotationConfigApplicationContext("src.main.java.Main.com.payment");
+        System.out.println(context);
 
-        WebShop ws = new WebShop(@ComponentScan("PayPalMethod"));
+//        WebShop ws = new WebShop(context.@ComponentScan("PayPalMethod"));
 
     }
 

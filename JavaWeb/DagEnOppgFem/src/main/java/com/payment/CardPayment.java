@@ -3,8 +3,9 @@ package com.payment;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@Component("CardPayment")
+@Component
 public class CardPayment implements Payment{
+    CardPayment cardPayment;
 
 
     public void pay(int amount){
