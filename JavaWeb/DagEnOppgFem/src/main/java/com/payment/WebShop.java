@@ -1,11 +1,7 @@
-import com.payment.Payment;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+package com.payment;
 
-@Component("WebShop")
 public class WebShop{
     Payment pm;
-
 
     public WebShop(Payment pm) {
         this.pm = pm;

@@ -1,9 +1,9 @@
 package com.payment;
 
-import org.springframework.context.annotation.ComponentScan;
+
 import org.springframework.stereotype.Component;
 
-@Component("VippsPayment")
+@Component
 public class VippsPayment implements Payment{
 
     public void pay(int amount){

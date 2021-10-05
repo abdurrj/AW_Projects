@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>TestClass task1</title>
+</head>
+<body>
+<h1>Oppgaveset 6, oppgave 8</h1>
+<ul>
+  <li th:each="book : ${bookList}" th:if="${book.getPrice()}>=200">
+    <span  th:text="${book.getTitle()} + ': ' + ${book.getPrice()}"></span>
+  </li>
+</ul>
+</body>
+</html>

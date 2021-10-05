@@ -1,9 +1,8 @@
 package com.payment;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@Component("PayPalPayment")
+@Component
 public class PayPalPayment implements Payment{
 
     @Override

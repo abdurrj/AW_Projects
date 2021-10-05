@@ -1,5 +1,4 @@
-package com.payment;
-
+package com.shop.dagenoppgfemv2;
 
 public interface Payment {
 

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>TestClass task1</title>
+</head>
+<body>
+<h1>Oppgaveset 6, oppgave 7</h1>
+<ul>
+  <li th:each="book : ${bookList}" th:text="${book.getTitle()} + ': ' + ${book.getPrice()}"></li>
+</ul>
+</body>
+</html>
