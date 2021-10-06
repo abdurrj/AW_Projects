@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+
+<body>
+<form action="/loginOppg2" method="post">
+  <label>Brukernavn
+    <input type="text" name="username" th:value="${session.username}">
+  </label>
+  <label>Passord:
+    <input type="password" name="password">
+  </label>
+  <button type="submit">Submit</button>
+</form>
+
+
+
+</body>
+</html>

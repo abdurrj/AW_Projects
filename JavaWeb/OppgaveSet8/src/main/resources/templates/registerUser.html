@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registreringsskjema</title>
+  <style>
+    label{
+      display: none;
+    }
+    div {
+      margin-bottom:20px;
+    }
+    body {
+      margin: 20px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<form action="/loginOppg3" method="post">
+  <div>
+  <label for="userName">Brukernavn  </label>
+  <input id="userName" type="text" name="username" placeholder="Username">
+  </div>
+  <div>
+  <label for="password">Passord:</label>
+    <input id="password" type="password" name="password" placeholder="Password">
+  </div>
+  <div>
+  <label for="passwordAgain">Passord:  </label>
+  <input id="passwordAgain" type="password" name="passwordRetype" placeholder="Retype password">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>
