@@ -2,12 +2,16 @@ package com.example.oppgaveset8;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -99,8 +103,10 @@ public class OppgaveSet8Application {
     public String checkUserNamePassword(
             HttpSession session,
             @RequestParam String username,
-            @RequestParam String password
-        ){
+            @RequestParam String password,
+            HttpServletResponse response,
+            Model model
+        ) throws InvalidUsernamePassword, IOException {
         session.setAttribute("username", username.toLowerCase());
 
         @SuppressWarnings("unchecked")
@@ -125,10 +131,13 @@ public class OppgaveSet8Application {
 
         if (userPassword.equals(password)){
             session.setAttribute("correctLogin", "true");
+            model.addAttribute("username", username);
             return "loggedin";
         }
 
-        return "loginOppg2";
+        response.sendError(123, "booo");
+//        throw new InvalidUsernamePassword();
+        return "/loginOppg2";
     }
 
     @PostMapping("/logout")
@@ -171,6 +180,43 @@ public class OppgaveSet8Application {
         }
 
         return "redirect:/registrationform";
+    }
+
+    @PostMapping("/deleteuser")
+    public String deleteUser(HttpSession session){
+        String loggedInUser = (String)session.getAttribute("username");
+        @SuppressWarnings("unchecked")
+        List<User> userList = (List<User>)session.getAttribute("users");
+        User user = null;
+        for (User u : userList){
+            if (u.getUsername().equals(loggedInUser)){
+                user = u;
+                break;
+            }
+        }
+        userList.remove(user);
+        session.setAttribute("users", userList);
+        return "loginOppg2";
+    }
+
+    @GetMapping("/sessionMethods")
+    public String sessionMethods(HttpSession session){
+        System.out.println("Creation time");
+        System.out.println(session.getCreationTime() +"\n");
+
+        System.out.println("AttributeNames");
+        for (Enumeration<String> e = session.getAttributeNames(); e.hasMoreElements();)
+            System.out.println(e.nextElement());
+
+        System.out.println();
+
+        System.out.println(session.getMaxInactiveInterval());
+
+        session.setMaxInactiveInterval(30);
+
+        System.out.println(session.getMaxInactiveInterval());
+
+        return "loginOppg2";
     }
 
 }

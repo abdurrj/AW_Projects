@@ -101,6 +101,8 @@ public class RestControllerApplication {
         return "Hello " + input;
     }
 
+
+    // PathVariable optional
     @RequestMapping({"/optionalPathVari/{input}", "/optionalPathVari"})
     public String helloOptionalPathVari(@PathVariable(required = false) String input) {
         if (input == null) {
@@ -171,7 +173,6 @@ public class RestControllerApplication {
 
     @GetMapping("/reqresponse")
     public String reqResponse(HttpServletRequest req, HttpServletResponse resp){
-        resp.
         return "";
     }
 

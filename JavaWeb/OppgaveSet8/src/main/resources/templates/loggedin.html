@@ -6,10 +6,17 @@
 </head>
 <body>
   <p>Du har logget in!</p>
+  <p th:text="${username}"></p>
 
 <div>
   <form action="/logout" method="post">
     <button type="submit">Logg ut 😐</button>
+  </form>
+</div>
+
+<div>
+  <form action="/deleteuser" method="post">
+    <button type="submit">Slett bruker 😮</button>
   </form>
 </div>
 </body>

@@ -3,6 +3,6 @@ package com.example.oppgset9;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
+@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "do bad stuff")
 public class invalidProductIdException extends Exception{
 }
