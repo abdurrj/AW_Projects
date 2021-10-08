@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie</title>
+</head>
+<body>
+  <h1>Movie</h1>
+  <form action="/saveMovie" method="post" th:object="${movie}">
+    <label for="movieTitle">Movie Title</label>
+    <input id="movieTitle" type="text" th:field="*{title}" placeholder="Movie Title">
+    <br>
+    <br>
+    <label for="movieDirector">Movie director</label>
+    <input id="movieDirector" type="text" th:field="*{director}" placeholder="Movie Director">
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <label>For Children</label>
+    <input type="checkbox" th:field="*{forChildren}">
+    <br>
+    <br>
+    <fieldset id="group2">
+      <ul>
+        <li th:each="gen : ${movieGenre}">
+          <input type="radio" th:value="${gen}" th:field="*{genre}" name="group2">
+          <label th:text="${gen}"></label>
+        </li>
+      </ul>
+    </fieldset>
+    <br>
+    <br>
+    <input type="submit" value="Save" name="save">
+  </form>
+
+</body>
+</html>

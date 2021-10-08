@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Numbers</title>
+</head>
+<body>
+  <h1>Legg til tallet ditt i summen:</h1>
+  <h2>Nåværende sum: <span th:text="${currentSum}"></span></h2>
+  <form action="addyournumber" method="post">
+    <input type="text" name="numToAdd">
+    <input type="submit" value="legg til">
+  </form>
+</body>
+</html>

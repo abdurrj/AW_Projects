@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+</head>
+<body>
+  
+  <!--  <h2 th:text="${error}" ></h2> Går det ikke å bestemme hva denne skal vise? -->
+  <h2 th:if="${status}==71808">Status koden er Bobil opp ned</h2>
+  <h2 th:unless="${status}==71808">Du prøvde å legge til et negativt tall</h2>
+  <h2 th:text="${status}" ></h2>
+  <h1>🤯</h1>
+  
+  <h2 th:if="${status}==71808">Men jeg tror ikke det du skrev inn var et tall</h2>
+  <h2 th:unless="${status}==71808">Det er ikke helt lov....</h2>
+  <form action="/addyournumber" method="get">
+    <input type="submit" value="Gå tilbake">
+  </form>
+</body>
+</html>

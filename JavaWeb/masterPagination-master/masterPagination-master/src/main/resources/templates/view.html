@@ -37,10 +37,8 @@
   <div>
     <ul th:each="book : ${bookList}" >
       <li>
-        <a th:text="${book.getTitle()}" th:href="'/'+${book.getId()}"></a>
+        <a th:text="${book.getTitle()}" th:href="'/' + ${currentPage} + '/' + ${book.getId()}"></a>
       </li>
-<!--      <li th:text="${book.getAuthor()}"></li>-->
-<!--      <li th:text="${book.getPrice()}"></li>-->
     </ul>
   </div>
 </body>

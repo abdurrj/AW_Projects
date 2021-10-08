@@ -1,10 +1,7 @@
 package com.example.BookStore;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-
-
 public class Book {
+    private int currentPage;
     private Integer id;
     private String title;
     private String author;
@@ -17,6 +14,12 @@ public class Book {
         this.author = author;
         this.price = price;
         this.date = date;
+    }
+    public int getCurrentPage(){
+        return currentPage;
+    }
+    public void setCurrentPage(int currentPage){
+        this.currentPage = currentPage;
     }
 
     public Integer getId() {

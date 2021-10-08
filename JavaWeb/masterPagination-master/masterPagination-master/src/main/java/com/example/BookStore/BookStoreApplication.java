@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,15 +26,14 @@ public class BookStoreApplication {
 	public String viewPage(
 			Model model,
 			@RequestParam(required = false, defaultValue = "1") int page,
-			@RequestParam(required = false, defaultValue = "10") int pageSize,
-			HttpSession session
+			@RequestParam(required = false, defaultValue = "10") int pageSize
 	){
 
-		if (page==0){
+		if (page<1){
 			page=1;
 		}
 
-		int[] pageList = new int[10];
+		int[] pageList = new int[pageSize];
 		for (int i = 1; i<=pageList.length;i++){
 			pageList[i-1] = i;
 		}
@@ -44,30 +41,23 @@ public class BookStoreApplication {
 		model.addAttribute("viewPages", pageList);
 
 		List<Book> bookList = bookRepository.getPage(page-1, pageSize);
-		session.setAttribute("currentPage", page);
 		model.addAttribute("currentPage", page);
-
 
 		model.addAttribute("bookList", bookList);
 		return "view";
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/{currentPage}/{id}")
 	public String showBookDetails(
 			Model model,
-			HttpSession session,
-			@PathVariable int id
+			@PathVariable int id,
+			@PathVariable int currentPage
 	){
-		int currentPage = (int) session.getAttribute("currentPage");
-		model.addAttribute("currentPage", currentPage);
 		Book selectedBook = bookRepository.getBook(id);
+		selectedBook.setCurrentPage(currentPage);
 		model.addAttribute("book", selectedBook);
 		return "selectedbook";
 	}
-
-
-
-
 
 }
 
