@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<h1>Bøker</h1>
+<div>
+  <a th:href="'/?page=' + ${currentPage}">Back</a>
+</div>
+<div>
+  <ul>
+    <li th:text="${book.getTitle()}"></li>
+    <li th:text="${book.getAuthor()}"></li>
+    <li th:text="${book.getPrice()}"></li>
+    <li th:text="${book.getDate()}"></li>
+  </ul>
+</div>
+</body>
+</html>

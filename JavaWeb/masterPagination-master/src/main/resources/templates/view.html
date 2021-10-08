@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    #pagenr{
+      list-style: none;
+      float:left;
+      background-color: lightgray;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    #pagenrdiv{
+      float: unset;
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bøker</h1>
+  <div>
+    <a th:if="${currentPage}>1" th:href="'/?page=' + ${currentPage-1}">Previous page</a>
+    <a th:if="${currentPage}<10" th:href="'/?page=' + ${currentPage+1}">Next page</a>
+  </div>
+  <div id="pagenrdiv">
+    <ul>
+      <li id="pagenr" th:each="page : ${viewPages}" >
+        <a th:text="${page}" th:if="${page}!=${currentPage}" th:href="'/?page=' + ${page}"></a>
+        <a th:text="${page}" th:if="${page}==${currentPage}"></a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul th:each="book : ${bookList}" >
+      <li>
+        <a th:text="${book.getTitle()}" th:href="'/'+${book.getId()}"></a>
+      </li>
+<!--      <li th:text="${book.getAuthor()}"></li>-->
+<!--      <li th:text="${book.getPrice()}"></li>-->
+    </ul>
+  </div>
+</body>
+</html>
