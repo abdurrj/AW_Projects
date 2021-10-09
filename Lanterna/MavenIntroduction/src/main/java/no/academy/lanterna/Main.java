@@ -81,7 +81,7 @@ public class Main {
         terminal.putCharacter(player.playerChar);
 
 
-        // Initiate map, return list of Line (Wall) objects to draw
+        // Initiate map, return list of no.academy.lanterna.Line (Wall) objects to draw
         // And check validity of the moves
         List<Line> lineList = GameBoard.mapMaker(terminal);
 

@@ -28,7 +28,7 @@ public abstract class Line {
 
     /**
      * Method to draw the line inn on the game board
-     * @param line is the Line object to draw in
+     * @param line is the no.academy.lanterna.Line object to draw in
      * @param terminal that is running the game
      * */
     public abstract void makeLine(Line line, Terminal terminal) throws IOException;

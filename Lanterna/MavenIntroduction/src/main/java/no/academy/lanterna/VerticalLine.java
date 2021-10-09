@@ -6,7 +6,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.io.IOException;
 
 
-public class VerticalLine extends Line{
+public class VerticalLine extends Line {
 
     public VerticalLine(int length, int xStartPos, int yStartPos) {
         super(length, xStartPos, yStartPos);

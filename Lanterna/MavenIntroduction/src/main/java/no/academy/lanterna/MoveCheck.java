@@ -12,7 +12,7 @@ public class MoveCheck {
     /**
      * To check if the new cursor position is occupied by a wall.
      * Returns true if the cursor position is on a wall.
-     * @param lineList is the list of all Line objects
+     * @param lineList is the list of all no.academy.lanterna.Line objects
      * @param terminal is the terminal running the game
      * @return boolean
      * */
@@ -33,7 +33,7 @@ public class MoveCheck {
     /**
      * To check if the x,y coordinate is occupied by a wall.
      * Returns true if the coordinate is occupied by a wall.
-     * @param lineList is the list of all Line objects
+     * @param lineList is the list of all no.academy.lanterna.Line objects
      * @param x is the specific row to check
      * @param y is the specific column to check
      * @return boolean
@@ -53,7 +53,7 @@ public class MoveCheck {
     /**
      * To check if the coWorker object is sharing location with the player.
      * Returns true if the coWorker and player are occupying the same spot.
-     * @param coWorkerList is the list of all Line objects.
+     * @param coWorkerList is the list of all no.academy.lanterna.Line objects.
      * @param player is the player object.
      * @return boolean
      * */
@@ -69,7 +69,7 @@ public class MoveCheck {
     /**
      * To check if the coWorker object is occupying a specific location.
      * Returns true if the coWorker is occupying the given x,y coordinate.
-     * @param coWorkerList is the list of all Line objects.
+     * @param coWorkerList is the list of all no.academy.lanterna.Line objects.
      * @param x is the specific row to check.
      * @param y is the specific column to check.
      * @return boolean

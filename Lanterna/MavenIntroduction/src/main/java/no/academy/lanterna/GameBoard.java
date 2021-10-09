@@ -20,7 +20,7 @@ public class GameBoard extends JFrame {
      * @param width is the horizontal width
      * @param xStartPos starting row
      * @param yStartPos starting column
-     * @return List of Line objects
+     * @return List of no.academy.lanterna.Line objects
      * */
     public static List<Line> boxMaker(int height, int width, int xStartPos, int yStartPos){
         List<Line> box = new ArrayList<>();
@@ -34,7 +34,7 @@ public class GameBoard extends JFrame {
      * Static method to make the game board with outer walls and obstacles in the middle.
      * To make walls
      * @param terminal is the terminal running the game
-     * @return List of Line objects
+     * @return List of no.academy.lanterna.Line objects
      * */
     public static List<Line> mapMaker(Terminal terminal) throws IOException {
         List<Line> lineList = new ArrayList<>();
