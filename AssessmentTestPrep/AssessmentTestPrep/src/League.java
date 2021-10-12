@@ -18,10 +18,13 @@ public class League {
     }
 
     public List<Team> teamsSortedByVictories() {
-        return teams.stream()
+        Collections.sort(teams, (o2, o1) -> o1.getVictories() - o2.getVictories());
+        return teams;
+
+/*        return teams.stream()
                 // Den første er skrevet bare som en øvelse
                 // .sorted((o2, o1) -> Integer.compare(o1.getVictories(), o2.getVictories()))
                 .sorted(Comparator.comparing(Team::getVictories).reversed())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
     }
 }
