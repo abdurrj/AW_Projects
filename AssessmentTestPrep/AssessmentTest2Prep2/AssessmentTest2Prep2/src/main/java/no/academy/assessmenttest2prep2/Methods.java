@@ -51,12 +51,16 @@ public class Methods {
         Hint: filter, mapToInt, sum.
      */
     public static int getTotalNumberOfLettersOfNamesLongerThanFive(String... names) {
+        // Make String[] in to a List<String>
         List<String> listOfNames = Arrays.asList(names);
         return listOfNames.stream()
+                // Apply filter on elements (n) to check if they are longer than 5
                 .filter(n-> n.length()>5)
+                // if they are longer, map them to an IntStream (example (1,2,3,4,5))
+                // number to save in the stream is the length of the string
                 .mapToInt(String::length)
+                //sum up all numbers in the stream and return the sum
                 .sum();
-//        return 0;
     }
 
     /*
@@ -123,7 +127,8 @@ public class Methods {
             list.add(j);
         }
 
-        List<Integer> reversed =  list.stream().sorted((o1, o2) -> o2 - o1)
+        List<Integer> reversed =  list.stream()
+                .sorted((o1, o2) -> o2 - o1)
                 .collect(Collectors.toList());
         return reversed.get(1);
 
@@ -143,6 +148,7 @@ public class Methods {
             }
         }
         return 0;*/
+
         List<Integer> multiOccuranceList = integerList.stream()
                 .filter(o1->Collections.frequency(integerList,o1)>1)
                 .collect(Collectors.toList());

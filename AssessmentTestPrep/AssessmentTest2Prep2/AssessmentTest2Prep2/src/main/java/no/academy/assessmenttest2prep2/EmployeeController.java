@@ -20,15 +20,24 @@ class EmployeeController {
             @RequestParam(required = false, defaultValue="")String id
 
     ){
+
         return employeeVOList.stream()
+                // Applying filter on employeeVO objects
+                // and checking if employeeNumber is same as provided id
                 .filter(employeeVO -> employeeVO.getEmployeeNumber().equals(id))
+
+                // find and return any match, or return null if no match found
+                // it returns the type of object we're working on
                 .findAny().orElse(null);
-//        for (EmployeeVO e : employeeVOList){
-//            if (e.getEmployeeNumber().equals(id)){
-//                return e;
-//            }
-//        }
-//        return null;
+
+// With for loop
+/*
+        for (EmployeeVO e : employeeVOList){
+            if (e.getEmployeeNumber().equals(id)){
+                return e;
+            }
+        }
+        return null;*/
     }
 
 
@@ -53,7 +62,6 @@ class EmployeeController {
         Make a PostMapping on "/employee" where it takes in an EmployeeVO, adds it, and returns a responseEntity with the created user and status created.
         Hint: RequestBody, ResponseEntity
      */
-
     @PostMapping("/employee")
     public ResponseEntity<EmployeeVO> postEmployeeMethod(
             @RequestBody EmployeeVO employeeVO
