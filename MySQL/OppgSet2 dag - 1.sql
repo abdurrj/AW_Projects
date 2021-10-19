@@ -9,7 +9,7 @@ where Code like '_W_';
 SELECT *
 from country
 WHERE Name like 'N%' OR Name like 'O%' OR Name like 'P%'
--- WHERE Name between 'N%' and 'Q%'
+###WHERE Name between 'N%' and 'Q%'
 ORDER BY Name ASC;
 
 Select Language, Percentage, Name
@@ -38,10 +38,10 @@ from country
 group by Continent
 ORDER BY SUM(Population) DESC;
 
--- Select Continent, count(*)
--- from country
--- Where Continent like '%America'
--- group by Continent;
+###Select Continent, count(*)
+###from country
+###Where Continent like '%America'
+###group by Continent;
 
 Select Name, Language
 From country, countrylanguage
@@ -65,7 +65,7 @@ group by Continent;
 Select Name, Language
 from country, countrylanguage;
 
--- Select DISTINCT co.continent, cl.Language
+###Select DISTINCT co.continent, cl.Language
 Select continent, count(DISTINCT cl.Language, co.continent)
 from countrylanguage as cl
 join country as co on cl.CountryCode = co.Code
