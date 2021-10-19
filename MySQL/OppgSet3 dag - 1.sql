@@ -32,7 +32,13 @@ values(17049110101, 'Abdur Rahman Jalil', 'abdur@jalil.no', '1991-04-17');
 
 
 UPDATE person
-set foedselsdato = '1991-04-17 02:30'
+set foedselsdato = '1999-09-09 02:30'
+where Personnummer = '17049110101';
+
+USE test;
+
+UPDATE person
+set EPost = 'place@holder.no'
 where Personnummer = '17049110101';
 
 -- Oppgave 7
