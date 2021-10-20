@@ -39,7 +39,7 @@ from country as co
 left join city as ci on code=CountryCode
 order by ci.name asc;
 
-select co.Name, COALESCE(ci.Name, "Har ingen by") as 'by'
+select co.Name, COALESCE(ci.Name, "Har ingen by")
 from country as co
 left join city as ci on code=countrycode
 order by ci.Name;
