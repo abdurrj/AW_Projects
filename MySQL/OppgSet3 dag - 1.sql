@@ -1,4 +1,8 @@
 -- Oppgave 1
+CREATE SCHEMA `test` ;
+
+USE test;
+
 create table person (
 Personnummer char(11) NOT NULL unique,
 Navn varchar(100) default 'Ukjent',
@@ -52,7 +56,13 @@ update person
 set foedselsdato = str_to_date('20.02.1912', '%d.%m.%Y')
 where Navn = 'Ola Nordmann';
 
+USE world;
+
 -- Oppgave 9
+-- Always select first to make sure you have the right line
+select * from city
+where Name = 'Bærum';
+-- When line found, then delete
 delete from city
 where Name = 'Bærum';
 
