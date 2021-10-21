@@ -1,5 +1,4 @@
 
-
 select * from modul;
 
 insert into academy.modul
@@ -14,10 +13,11 @@ values
 ('JS-OSL-04', 'Angular in-depth', 5);
 
 # Gjort i ettertid for alle, en om gangen
+/*
 update modul
 set Dager = 5
 where ModulID = 'JS-OSL-04';
-
+*/
 
 insert into kurs(Navn, FraDato, TilDato, Sted)
 values
@@ -100,8 +100,8 @@ from kurs_modul
 where ID_Kurs = 1;
 
 Update kurs_modul
-set Lærer = 'Stian'
-where ID_Kurs = 1;
+set Lærer = 'Eirik'
+where ID_Kurs = 2;
 
 Update kurs_modul
 set Lærer = 'Stian'
@@ -121,7 +121,13 @@ from kurs_modul km
 join modul m on km.ID_Modul = m.ModulID
 where km.lærer = 'Stian';
 
-Select km.lærer, sum(m.dager) as UndervisningsTimer
+create view UndervisningsDagerforLærer as
+Select km.lærer, sum(m.dager) as Undervisningsdager
 from kurs_modul as km
 join modul m on km.ID_Modul = m.ModulID
 group by km.lærer;
+
+select *
+from undervisningsdagerforlærer;
+
+drop view undervisningsdagerforlærer;
