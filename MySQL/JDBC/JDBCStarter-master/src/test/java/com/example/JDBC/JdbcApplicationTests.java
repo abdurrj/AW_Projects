@@ -1,7 +1,6 @@
 package com.example.JDBC;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -49,26 +48,22 @@ public class JdbcApplicationTests {
 		assertEquals(count, books2.size(), "SQL Injection attempt should return all books in the table");
 	}
 
-/*
 	@Test
 	public void testGetBooksByAuthorSafe() {
 		List<Book> books = bookRepository.getBooksByAuthorSafe("Homer");
-		assertEquals("Book with author Homer should be The Iliad", "The Iliad", books.get(0).getTitle());
+		assertEquals("The Iliad", books.get(0).getTitle(),"Book with author Homer should be The Iliad");
 
 		List<Book> books2 = bookRepository.getBooksByAuthorSafe("Homer' or author not like 'Homer");
-		assertEquals(0, books.size(), "SQL Injection attempt should return emtpy list");
+		assertEquals(0, books2.size(), "SQL Injection attempt should return emtpy list");
 	}
-*/
 
-/*
 	@Test
 	public void testGetBooksByCustomer() {
 		List<Book> books = bookRepository.getBooksByCustomer("Donald");
 		assertEquals("Douglas Adams", books.get(0).getAuthor(), "Book purchased by customer Donald should be Douglas Adams");
 	}
-*/
 
-/*
+
 	@Test
 	public void testAddBook() {
 		int count = bookRepository.getBooksCount();
@@ -81,16 +76,13 @@ public class JdbcApplicationTests {
 
 		assertEquals("Test Class", lastBook.getAuthor(), "Last book is the book created by this method");
 	}
-*/
 
-/*
 	@Test
 	public void testGetBooksMeta() {
 		int count = bookRepository.getBooksCount();
 		List<Book> books = bookRepository.getBooksMeta();
 		assertEquals(count, books.size(), "There should be 3 books in the list");
 	}
-*/
 
 }
 

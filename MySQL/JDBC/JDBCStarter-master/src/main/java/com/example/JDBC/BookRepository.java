@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import javax.swing.plaf.nimbus.State;
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -82,7 +79,7 @@ public class BookRepository {
         return bookList;
     }
 
-    public List<Book> getBooksByAuthor2(String author){
+    public List<Book> getBooksByAuthorSafe(String author){
         List<Book> bookList = new ArrayList<>();
         try(Connection conn = dataSource.getConnection();
             PreparedStatement stmnt = conn.prepareStatement("SELECT * FROM BOOK WHERE author = (?)");
@@ -99,6 +96,43 @@ public class BookRepository {
         return bookList;
     }
 
+    public List<Book> getBooksByCustomer(String customerName){
+        List<Book> bookList = new ArrayList<>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement stmnt = conn.prepareStatement(
+                    "SELECT B.* " +
+                        "FROM BOOK AS B " +
+                        "JOIN PURCHASE AS P " +
+                        "ON B.ID = P.BOOK_ID " +
+                        "JOIN CUSTOMER C ON C.ID = P.CUSTOMER_ID " +
+                        "WHERE C.FIRST_NAME = (?)"
+            );){
+            stmnt.setString(1, customerName);
+            ResultSet rs = stmnt.executeQuery();
+            while (rs.next()) {
+                bookList.add(rsBook(rs));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return bookList;
+    }
+
+    public void addBook(Book book){
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement stmnt = conn.prepareStatement(
+                    "INSERT INTO BOOK(TITLE, AUTHOR, PRICE) " +
+                        "VALUES(?, ?, ?)"
+        );){
+            stmnt.setString(1, book.getTitle());
+            stmnt.setString(2, book.getAuthor());
+            stmnt.setString(3, ""+book.getPrice());
+            stmnt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
 
     // Helper method to create a Book object instantiated with data from the ResultSet
@@ -110,4 +144,43 @@ public class BookRepository {
     }
 
 
+    public List<Book> getBooksMeta() {
+        List<Book> books = new ArrayList<>();
+        try (Connection conn = dataSource.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM book")) {
+
+// part 1
+            ResultSetMetaData meta = rs.getMetaData();
+            int columns = meta.getColumnCount();
+            System.out.println("Columns " + columns);
+            for (int i = 1; i <= columns; i++ ) {
+                String name = meta.getColumnName(i);
+                String type = meta.getColumnTypeName(i);
+                System.out.println("Column " +name +" (" + type +")");
+            }
+
+// part 2
+            System.out.println("DATA:");
+            while (rs.next()){
+                books.add(rsBook(rs));
+                for (int i = 1; i <= columns; i++ ) {
+                    String name = meta.getColumnName(i);
+                    String type = meta.getColumnTypeName(i);
+
+                    if (type.equals("BIGINT")) {
+                        System.out.println(name + ": " + rs.getInt(name));
+                    }
+                    else if (type.equals("VARCHAR")) {
+                        System.out.println(name + ": " + rs.getString(name));
+                    }
+                }
+                System.out.println();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return books;
+    }
 }
