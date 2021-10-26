@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class BookController {
@@ -90,4 +89,23 @@ public class BookController {
         repository.save(book);
         return "redirect:/";
     }
+
+    @GetMapping("/editbook/{id}")
+    public String editBookPage(
+            @PathVariable Long id,
+            Model model
+    ){
+        model.addAttribute("book", repository.findById(id).get());
+        return "editbook";
+    }
+
+    @PostMapping("/saveedits")
+    public String saveBookEdits(
+            @ModelAttribute Book book
+    ){
+        repository.save(book);
+        return "redirect:/";
+    }
+
+
 }

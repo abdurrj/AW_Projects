@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>view</title>
+</head>
+<body>
+<p th:text="${numOfCity}"></p>
+
+<ul>
+  <li th:each="continent : ${continents}" th:text="${continent}"></li>
+</ul>
+
+</body>
+</html>

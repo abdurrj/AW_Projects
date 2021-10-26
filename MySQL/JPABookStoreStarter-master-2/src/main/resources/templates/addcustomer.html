@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" action="/editcustomer" th:object="${customer}">
+  <label hidden for="id">id:</label>
+  <br>
+  <input id="id" type="hidden" th:field="*{id}">
+  <br><br>
+  <label for="title">First Name:</label>
+  <br>
+  <input id="title" type="text" th:field="*{firstName}">
+  <br><br>
+  <label for="author">Last Name:</label>
+  <br>
+  <input id="author" type="text" th:field="*{lastName}">
+  <br><br>
+  <label for="price">Email Address:</label>
+  <br>
+  <input id="price" type="text" th:field="*{emailAddress}">
+  <br>
+  <input type="submit">
+</form>
+
+</body>
+</html>
