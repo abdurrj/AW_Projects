@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Exercises</title>
+</head>
+<body>
+<div id="main">
+
+</div>
+
+<script>
+  document.title = 'Solution';
+  
+  var mainNode = document.getElementById('main');
+  var bodyNode = document.getElementsByTagName("body")[0]
+  var mns = mainNode.style;
+  
+  
+  var headingNode = document.createElement('h1');
+  headingNode.innerHTML = 'Heading';
+  
+  var subHeading = document.createElement('h2');
+  var textNode = document.createTextNode('Subheading');
+  subHeading.appendChild(textNode);
+  mainNode.append(headingNode, subHeading);
+  mns.minHeight = "500px";
+  bodyNode.style.backgroundColor = "darkred";
+  mainNode.style.backgroundColor="green";
+  mainNode.style.color="blue";
+  
+  // mainNode.style.border="2px solid black";
+  
+  
+</script>
+</body>
+</html>

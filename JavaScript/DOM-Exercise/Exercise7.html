@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Solution</title>
+</head>
+<body>
+<div id="main">
+  <h1>Nyheter</h1>
+  <h2>Fra norske kilder</h2>
+  <ul>
+    <li><a href="https://www.vg.no">vg.no</a></li>
+    <li><a href="https://www.db.no">dagbladet.no</a></li>
+    <li><a href="https://www.nrk.no">nrk.no</a></li>
+    <li><a href="https://www.afterposten.no">aftenposten.no</a></li>
+  </ul>
+</div>
+  <script>
+    var uList = document.getElementsByTagName('ul')[0]
+    var li = document.createElement('li');
+    var linkElement = document.createElement('a')
+    linkElement.setAttribute('href', "https://www.airliners.net")
+    linkElement.innerHTML = 'Airliners.net'
+    li.appendChild(linkElement);
+    uList.insertBefore(li, uList.childNodes[0]);
+    uList.removeChild(uList.childNodes[uList.childNodes.length-2])
+
+    var li2 = document.createElement('li');
+    var linkElement2 = document.createElement('a')
+    linkElement2.setAttribute('href', "https://www.sol.no")
+    linkElement2.innerHTML = 'sol.no'
+    li2.appendChild(linkElement2)
+    uList.append(li2)
+
+    var li3 = document.createElement('li');
+    var linkElement3 = document.createElement('a')
+    linkElement3.setAttribute('href', "https://www.bt.no")
+    linkElement3.innerHTML = 'bt.no'
+    li3.appendChild(linkElement3)
+
+    uList.insertBefore(li3, uList.childNodes[1]);
+    
+  </script>
+</body>
+</html>

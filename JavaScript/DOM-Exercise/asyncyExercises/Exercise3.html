@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1 id="changeme"></h1>
+<script>
+  var printTime = function(delay){
+    var element = document.getElementById("changeme")
+    setInterval(function (){
+      var hours = new Date().getHours().toString()
+      var minutes = new Date().getMinutes().toString()
+      var seconds = new Date().getSeconds().toString()
+      element.innerHTML = hours+":"+minutes+":"+seconds;
+    }, delay*1000)
+  }
+  printTime(1);
+</script>
+</body>
+</html>

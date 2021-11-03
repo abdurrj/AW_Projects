@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Exercises</title>
+</head>
+<body>
+<div id="main">
+
+</div>
+
+<script>
+  document.title = 'Solution';
+  
+  var headingNode = document.createElement('h1');
+  headingNode.innerHTML = 'Nyheter';
+  
+  var subHeading = document.createElement('h2');
+  var textNode = document.createTextNode('Fra norske kilder');
+  subHeading.appendChild(textNode);
+  
+  var unorderedList = document.createElement('ul');
+  var nettsider = ["vg", "db", "nrk", "aftenposten"]
+  
+  for (let i = 1; i<5; i++){
+    let li = document.createElement('li');
+    var linkElement = document.createElement('a')
+    linkElement.setAttribute('href', "https://www."+nettsider[i-1]+".no")
+    linkElement.innerHTML = nettsider[i-1]+".no"
+    li.appendChild(linkElement)
+    unorderedList.append(li);
+  }
+  
+  var mainNode = document.getElementById('main');
+  mainNode.append(headingNode, subHeading, unorderedList);
+</script>
+</body>
+</html>

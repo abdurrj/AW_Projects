@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+    <style>
+      .done {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  
+  <script>
+    var mainNode = document.getElementById("main");
+
+    var todos = [
+      {
+        text: "buy milk",
+        completed: false
+      },
+      {
+        text: "paint house",
+        completed: true
+      },
+      {
+        text: "learn javascript",
+        completed: false
+      }
+    ];
+
+    function renderHome() {
+      mainNode.innerHTML = `
+        <h1>Welcome!</h1>
+        <button id="viewList">Show todo list</button>
+      `;
+
+      var viewListButtonNode = document.getElementById("viewList");
+      viewListButtonNode.addEventListener('click', function () {
+        renderList();
+      });
+    }
+
+    function renderList() {
+      var listItems = todos.map(function (todo, index) {
+        var itemClass = todo.completed ? "done" : "";
+        return `<li class="${itemClass}" id="${index}">${todo.text}</li>`;
+      });
+      
+      mainNode.innerHTML = `
+        <h1>My Todos</h1>
+        <ul id="todos">
+          ${listItems.join("")}
+        </ul>
+        <input type="text" id="todoInput" placeholder="New todo...">
+        <button id="addTodo">Add todo</button>
+        <button id="back">Back</button>
+      `;
+
+      var todosNode = document.getElementById("todos");
+      todosNode.addEventListener('click', function (event) {
+        var todoIndex = event.target.id;
+        todos[todoIndex].completed = !todos[todoIndex].completed;
+        renderList();
+      });
+
+      var addTodoButtonNode = document.getElementById("addTodo");
+      var todoInputNode = document.getElementById("todoInput");
+      addTodoButtonNode.addEventListener('click', function () {
+        var newTodo = todoInput.value;
+
+        if (!newTodo) {
+          return;
+        }
+
+        todos.push({
+          text: newTodo,
+          completed: false
+        });
+
+        renderList();
+      });
+
+      var backButtonNode = document.getElementById("back");
+      backButtonNode.addEventListener('click', function () {
+        renderHome();
+      });
+    }
+
+    renderHome();
+  </script>
+</html>

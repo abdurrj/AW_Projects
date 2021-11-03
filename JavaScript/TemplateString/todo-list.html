@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Todos</title>
+  <style>
+    .done{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+</body>
+
+<script>
+  const mainNode = document.getElementById('main')
+  
+  let todos = [
+    {
+      text: 'buy milk',
+      completed:false,
+    },
+    {
+      text: 'paint house',
+      completed:true,
+    }
+  ];
+  
+  function renderHome(){
+    mainNode.innerHTML = `
+    <h1>Welcome!</h1>
+    <button id="viewList">SHow todo list</button>
+    `;
+  
+    const viewListButtonNode = document.getElementById('viewList');
+    viewListButtonNode.addEventListener('click', function(){
+      renderList();
+    });
+  }
+  
+  function renderList(){
+    const listItems = todos.map(function (todo, index){
+      const itemClass = todo.completed ? "done" : "";
+      return `<li id="${index}" class="${itemClass}">${todo.text}</li>`
+    }).join("");
+    
+    mainNode.innerHTML=`
+    <h1>My Todos</h1>
+    <ul id="todos">${listItems}</ul>
+    <input id="todoInput" type="text" placeholder="What needs to be done?">
+    <button id="add">Add todo</button>
+    <button id="back">Back</button>
+    `;
+    
+    const todoInput = document.getElementById('todoInput')
+    const addButtonNode = document.getElementById('add');
+    const todosNode = document.getElementById('todos');
+    
+    todosNode.addEventListener('click', function(event){
+      if(event.target === event.currentTarget){
+        return;
+      }
+      const todoIndex = event.target.id;
+      todos[todoIndex].completed = !todos[todoIndex].completed;
+      renderList();
+    })
+    
+    addButtonNode.addEventListener('click', function (){
+      const newTodo = todoInput.value;
+      
+      todos.push({
+        text : newTodo,
+        completed : false
+      })
+      renderList();
+    });
+    
+    const backButtonNode = document.getElementById('back');
+    backButtonNode.addEventListener('click', function(){
+      renderHome();
+    });
+    
+  }
+  
+  
+  renderHome();
+  
+</script>
+</html>

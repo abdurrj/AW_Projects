@@ -1,0 +1,169 @@
+<!-- 1. -->
+<html>
+  <head>
+    <title>Solution</title>
+  </head>
+  <body>
+    <div id="main1">
+      <h1 id="heading1">Heading</h1>
+      <h2 id="subheading1">Subheading</h2>
+      <ul class="itemlist1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <button id="add">Add item</button>
+    </div>
+    <script>
+      const listNode = document.querySelector('.itemlist1');
+      listNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+        event.target.parentNode.removeChild(event.target);
+      });
+
+      const addButtonNode = document.getElementById('add');
+      addButtonNode.addEventListener('click', function (event) {
+        const newItemNode = document.createElement('li');
+        newItemNode.innerText = 'Item';
+        listNode.append(newItemNode);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 2. -->
+<html>
+  <head>
+    <title>Solution</title>
+  </head>
+  <body>
+    <div id="main2">
+      <h1 id="heading2">Heading</h1>
+      <h2 id="subheading2">Subheading</h2>
+      <ul class="itemlist2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <button id="reset">Reset</button>
+    </div>
+    <script>
+      function getRandomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const listNode = document.querySelector('.itemlist2');
+      listNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+        const red = getRandomInRange(0, 255);
+        const green = getRandomInRange(0, 255);
+        const blue = getRandomInRange(0, 255);
+        event.target.style.color = 'rgb(' + red + ',' + green + ',' + blue + ')';
+      });
+
+      const resetButtonNode = document.getElementById('reset');
+      resetButtonNode.addEventListener('click', function (event) {
+        Array.from(listNode.children).forEach(function (child) {
+          child.style.color = '#000';
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 3. -->
+<html>
+  <head>
+    <title>Solution</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #directions {
+        height: 10vh;
+      }
+      #bounds {
+        position: relative;
+        height: 90vh;
+        border: 1px solid #000;
+      }
+      #box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="directions">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+      </div>
+      <div id="bounds">
+        <div id="box"></div>
+      </div>
+    </div>
+    <script>
+      const step = 20;
+      let x = 0;
+      let y = 0;
+
+      const boxNode = document.getElementById('box');
+      const boundsNode = document.getElementById('bounds');
+
+      const directionsNode = document.getElementById('directions');
+      directionsNode.addEventListener('click', function (event) {
+        if (event.currentTarget === event.target) {
+          return;
+        }
+
+        const direction = event.target.id;
+        let nextX = x;
+        let nextY = y;
+
+        switch (direction) {
+          case 'up':
+            nextY = y - step;
+            break;
+          case 'down':
+            nextY = y + step;
+            break;
+          case 'left':
+            nextX = x - step;
+            break;
+          case 'right':
+            nextX = x + step;
+            break;
+        }
+
+
+        if (nextY > 0 && nextY <= (boundsNode.getBoundingClientRect().height - 50)) {
+          y = nextY;
+          boxNode.style.top = nextY;
+        }
+        if (nextX > 0 && nextX <= (boundsNode.getBoundingClientRect().width - 50)) {
+          x = nextX;
+          boxNode.style.left = nextX;
+        }
+      })
+    </script>
+  </body>
+</html>

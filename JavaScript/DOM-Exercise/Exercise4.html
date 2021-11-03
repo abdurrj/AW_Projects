@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Exercises</title>
+</head>
+<body>
+<div id="main">
+
+</div>
+
+<script>
+  document.title = 'Solution';
+  
+  var headingNode = document.createElement('h1');
+  headingNode.innerHTML = 'Film og spillnyheter';
+  
+  var subHeading = document.createElement('h2');
+  var textNode = document.createTextNode('Fra nrk.no');
+  subHeading.appendChild(textNode);
+  
+  var unorderedList = document.createElement('ul');
+  var bildeAdresser = [
+    "https://gfx.nrk.no/RQuT5S6N_k0hBKQ2ldhE6AZ_ztdOPcHhyq88JWTM33Ng.jpg",
+    "https://gfx.nrk.no/72Mx3Ozh03bdT-V9XR0UBgjKmPNcQ5Jw3TbZkFeAQfNg.jpg"
+  ]
+  var tekst = [
+    "Woody Allen inngikk forlik med Amazon",
+    "Dæven søkke dette var bra"
+  ]
+  
+  for (let i = 0; i<2; i++){
+    let li = document.createElement('li');
+    var imageElement = document.createElement('img')
+    imageElement.setAttribute('src', bildeAdresser[i]);
+    
+    var linkElement = document.createElement('a')
+    var h3Element = document.createElement('h3');
+    linkElement.setAttribute('href', "https://www.vg.no")
+    linkElement.innerHTML = '<h3>'+tekst[i]+'</h3>'
+    
+    linkElement.appendChild(h3Element)
+    li.append(imageElement, linkElement)
+    unorderedList.append(li);
+  }
+  
+  var mainNode = document.getElementById('main');
+  mainNode.append(headingNode, subHeading, unorderedList);
+</script>
+</body>
+</html>
