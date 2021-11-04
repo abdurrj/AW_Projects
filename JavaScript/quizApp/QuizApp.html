@@ -65,68 +65,68 @@
     var mainNode = document.getElementById('main');
     var questionNo = 0;
 
-                                                                                                                                                                            var questions = [
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hva er nasjonalsporten i England",
-                                                                                                                                                                                    alt: ["Rugby", "Innebandy", "Fotball", "Cricket"],
-                                                                                                                                                                                    svar: 3,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hva er Pakistans nasjonalsport",
-                                                                                                                                                                                    alt: ["Cricket", "Landhockey", "Polo", "Innebandy"],
-                                                                                                                                                                                    svar: 1,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvilke to land uten kystlinje grenser bare til land som heller ikke har kystlinje",
-                                                                                                                                                                                    alt: ["Uzbekistan og Liectenstein", "Pakistan og Kirgisistan", "Kirgisistan og Filippinene", "Liechtenstein og Pakistan"],
-                                                                                                                                                                                    svar: 0,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvor gammel er Queen Elisabeth",
-                                                                                                                                                                                    alt: ["2000 år", "98 år", "95 år", "97 år", "23 år"],
-                                                                                                                                                                                    svar: 2,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvilket norsk selskap ble nettop kåret til Norges første unicorn(verdt mer enn 1 milliard dollar)?",
-                                                                                                                                                                                    alt: ["Cognite", "VaxiBody", "Vipps", "Kahoot"],
-                                                                                                                                                                                    svar: 0,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvilket år sank Titanic?",
-                                                                                                                                                                                    alt: ["1908", "1910", "1912", "1915"],
-                                                                                                                                                                                    svar: 2,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvor mange åndedrag tar menneskekroppen daglig?",
-                                                                                                                                                                                    alt: ["40.000", "10.000", "100.000", "20.000"],
-                                                                                                                                                                                    svar: 3,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hva er levetiden til en øyenstikker?",
-                                                                                                                                                                                    alt: ["1 uke", "24 timer", "1 måned", "1 år"],
-                                                                                                                                                                                    svar: 1,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Hvor hvor stor del av massen til solsystemet står solen for?",
-                                                                                                                                                                                    alt: ["40%", "53%", "80%", "99%"],
-                                                                                                                                                                                    svar: 3,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                },
-                                                                                                                                                                                {
-                                                                                                                                                                                    question: "Med hvilken sang vant Alexander Moberg MGP junior",
-                                                                                                                                                                                    alt: ["Paybacktime", "Det er en stjerne jeg skal bli", "Sinnsykt gal forelsket", "Fotball er supert"],
-                                                                                                                                                                                    svar: 1,
-                                                                                                                                                                                    valgtsvar: undefined
-                                                                                                                                                                                }
-                                                                                                                                                                            ]
+    var questions = [
+        {
+            question: "Hva er nasjonalsporten i England",
+            alt: ["Rugby", "Innebandy", "Fotball", "Cricket"],
+            svar: 3,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hva er Pakistans nasjonalsport",
+            alt: ["Cricket", "Landhockey", "Polo", "Innebandy"],
+            svar: 1,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvilke to land uten kystlinje grenser bare til land som heller ikke har kystlinje",
+            alt: ["Uzbekistan og Liectenstein", "Pakistan og Kirgisistan", "Kirgisistan og Filippinene", "Liechtenstein og Pakistan"],
+            svar: 0,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvor gammel er Queen Elisabeth",
+            alt: ["2000 år", "98 år", "95 år", "97 år", "23 år"],
+            svar: 2,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvilket norsk selskap ble nettop kåret til Norges første unicorn(verdt mer enn 1 milliard dollar)?",
+            alt: ["Cognite", "VaxiBody", "Vipps", "Kahoot"],
+            svar: 0,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvilket år sank Titanic?",
+            alt: ["1908", "1910", "1912", "1915"],
+            svar: 2,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvor mange åndedrag tar menneskekroppen daglig?",
+            alt: ["40.000", "10.000", "100.000", "20.000"],
+            svar: 3,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hva er levetiden til en øyenstikker?",
+            alt: ["1 uke", "24 timer", "1 måned", "1 år"],
+            svar: 1,
+            valgtsvar: undefined
+        },
+        {
+            question: "Hvor hvor stor del av massen til solsystemet står solen for?",
+            alt: ["40%", "53%", "80%", "99%"],
+            svar: 3,
+            valgtsvar: undefined
+        },
+        {
+            question: "Med hvilken sang vant Alexander Moberg MGP junior",
+            alt: ["Paybacktime", "Det er en stjerne jeg skal bli", "Sinnsykt gal forelsket", "Fotball er supert"],
+            svar: 1,
+            valgtsvar: undefined
+        }
+    ]
 
     function renderMain() {
         var isLastQuestion = (questionNo === questions.length-1)

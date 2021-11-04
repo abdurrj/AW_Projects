@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Things I Have Learned This Week</title>
+</head>
+<body>
+<div id="main"></div>
+<script>
+  var mainNode = document.getElementById("main");
+  var titleNode = document.createElement('h1');
+  titleNode.setAttribute("id", "title");
+  titleNode.innerHTML = 'Things I have learned this week';
+  
+  var subtitleNode = document.createElement('h3');
+  subtitleNode.setAttribute("class", "subtitle");
+  subtitleNode.innerHTML = 'Week 9 of the Academy Java Program'
+  
+  var itemsListNode = document.createElement("ul");
+  itemsListNode.setAttribute("id", "items")
+  var itemsToAdd = [
+    "JavaScript Syntax",
+    "Functions and Closures",
+    "Object and Classes",
+    "Array Methods",
+    "DOM"
+  ];
+  for (let i = 0; i<itemsToAdd.length; i++){
+    var li = document.createElement('li');
+    li.innerHTML = itemsToAdd[i];
+    itemsListNode.append(li);
+  }
+  
+  mainNode.append(titleNode, subtitleNode, itemsListNode);
+  
+  
+</script>
+</body>
+</html>
