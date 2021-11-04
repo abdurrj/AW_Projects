@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Volume Calculator</title>
+</head>
+<body>
+<div id="main">
+</div>
+<script>
+/*
+  var boxVolume = function(box){
+    return box.height*box.width*box.depth;
+  }*/
+
+var box = {
+  height: 0,
+  width: 0,
+  depth: 0,
+  volume:undefined
+}
+  function renderPage() {
+    var boxVolume = undefined
+    var mainNode = document.getElementById("main");
+
+    mainNode.innerHTML = `
+      <h1 id="title">Box volume calculator</h1>
+      <label for="height">height:</label>
+      <input id="height" type="text" style="margin:10px" value="${box.height}">
+      <br>
+      <label for="width">width:</label>
+      <input id="width" type="text" style="margin:10px" value="${box.width}">
+      <br>
+      <label for="depth">depth:</label>
+      <input id="depth" type="text" style="margin:10px" value="${box.depth}">
+      <br>
+      <button id="calculate">Calculate result</button>
+      <p>Result: ${box.volume !== undefined ? box.volume : ""}</p>`
+    var calculateNode = document.getElementById("calculate");
+    
+    var calculateVolume = function(){
+      box.height = +document.getElementById("height").value;
+      box.width = +document.getElementById("width").value;
+      box.depth = +document.getElementById("depth").value;
+      box.volume = box.height*box.width*box.depth;
+      renderPage();
+    }
+    calculateNode.addEventListener('click', calculateVolume);
+    
+  }
+  renderPage();
+</script>
+
+</body>
+</html>
