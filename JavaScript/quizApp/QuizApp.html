@@ -166,7 +166,6 @@
                 renderMain();
             }
            else{
-               alert("Du er ferdig! Trykk for å se resultatet")
                renderResult();
             }
         })
@@ -190,7 +189,6 @@
         }
         return riktig;
     }
-
     renderMain();
 
     function renderResult() {
@@ -199,21 +197,8 @@
         <div id="sluttside">
             <h2>Du fikk ${poeng} riktige svar! Gratulerer! </h2>
         </div>`
-
         mainNode.innerHTML = tekst;
-
     }
-
-    fullfor.addEventListener('click', function (event) {
-        if (event.target === event.currentTarget) {
-            return;
-        }
-        renderResult();
-
-
-    })
-
-
 </script>
 </body>
 </html>
