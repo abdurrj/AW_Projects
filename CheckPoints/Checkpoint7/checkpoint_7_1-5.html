@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Things I Have Learned This Week</title>
+</head>
+<body>
+  <div id="main">
+    <h1 class="title">Things I have learned this week</h1>
+    <h3 class="subtitle">Week 9 of the Academy Java Program</h3>
+    <ul id="items">
+      <li>JavaScript Syntax</li>
+      <li>Functions and Closures</li>
+      <li>Object and Classes</li>
+      <li>Array Methods</li>
+      <li style=>DOM</li>
+    </ul>
+  </div>
+  <script>
+      // getElementById --> ID must be unique for all elements
+      // One element in return
+      var titleNode = document.getElementById('title');
+
+      // getElementsByClassName --> class can repeat for elemenets
+      // gets array of elements, even if it's just one
+      var subtitleNode = document.getElementsByClassName("subtitle")[0]
+
+      var itemsNode = document.getElementById('items')
+
+      var domItem = itemsNode.children[itemsNode.children.length-1]
+      
+  </script>
+</body>
+</html>

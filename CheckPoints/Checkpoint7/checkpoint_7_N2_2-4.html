@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Things I Have Learned This Week</title>
+</head>
+<body>
+<div id="main">
+  <h1 class="title">Things I have learned this week</h1>
+  <h3 class="subtitle">Week 9 of the Academy Java Program</h3>
+  <ul id="items">
+    <li>JavaScript Syntax</li>
+    <li>Functions and Closures</li>
+    <li>Object and Classes</li>
+    <li>Array Methods</li>
+    <li>DOM</li>
+  </ul>
+</div>
+<script>
+  var mainNode = document.getElementById('main');
+  var buttonNode = document.createElement('button')
+  buttonNode.innerHTML = 'show/hide list';
+  mainNode.insertBefore(buttonNode, mainNode.children[2]);
+  
+  var listNode = document.getElementById('items');
+  
+  var increaseTextSize = function(event){
+    if (event.target===event.currentTarget){
+      return;
+    }
+    // Bare for morroskyld
+    var currentSize = event.target.style.fontSize
+    if (currentSize === '40px'){
+      event.target.style.fontSize = '16px'
+    }
+    else {
+      event.target.style.fontSize = '40px'
+    }
+  }
+  
+  listNode.addEventListener('click', increaseTextSize);
+  
+  var showHideList = function(){
+    var currentVis = listNode.style.visibility
+    listNode.style.visibility = currentVis === 'visible' ? 'hidden' : 'visible';
+  }
+  buttonNode.addEventListener('click', showHideList);
+  
+</script>
+</body>
+</html>
