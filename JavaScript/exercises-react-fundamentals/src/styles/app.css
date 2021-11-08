@@ -1,0 +1,23 @@
+.awesome {
+  background: green;
+}
+
+.awesome-container {
+  background: yellow;
+}
+
+.awesome-paragraph {
+  background: orange;
+}
+
+.CheckboxWithLabel {
+  background: yellow;
+}
+
+.custom-class-1 {
+  color: magenta;
+}
+
+.custom-class-2 {
+  background-color: orange;
+}
