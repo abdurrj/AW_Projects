@@ -53,7 +53,34 @@ let REPLACE_ME = () => <div/>;
  * - onChange
  */
 
-const CheckboxWithLabel = REPLACE_ME;
+const CheckboxWithLabel = class extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      isChecked: false
+    };
+  }
+
+  handleClick(){
+    this.setState({
+      isChecked: !this.state.isChecked
+    });
+  }
+
+  render() {
+    return (
+      <label className="CheckboxWithLabel">
+        <input
+        type="checkbox"
+        checked={this.state.isChecked}
+        onChange={this.handleClick.bind(this)}
+        />
+        {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
+      </label>
+    );
+  }
+};
 
 
 
@@ -94,7 +121,20 @@ const CheckboxWithLabel = REPLACE_ME;
  *
  */
 
-const ClickCounter = REPLACE_ME;
+const ClickCounter = class extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      count:0
+    }
+  }
+
+  render(){
+    <div>
+      {this.state.count}
+    </div>
+  }
+};
 
 
 

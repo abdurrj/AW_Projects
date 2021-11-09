@@ -142,8 +142,16 @@ const MySecondComponentWithProps = class extends React.Component{
 const MyThirdComponentWithProps = class extends React.Component {
   render() {
     const paragraphList = this.props.paragraphs.map((paragraph, i) => {
-      return <p key={i}>{paragraph.text}</p>;
+      return <p key={'betterNotBeIndex'+i}>{paragraph}</p>;
     });
+
+    /*  
+    this.props.paragraphs is string[]. Using map we handle each
+    string. The string has no method "text"
+
+    Additionally reactjs.org/docs advices not to use index as
+    key. So key should be a string at the least.
+    */
 
     return (
       <div>{paragraphList}</div>
@@ -195,10 +203,39 @@ const MyThirdComponentWithProps = class extends React.Component {
  *
  */
 
-const MyFourthComponentWithProps = REPLACE_ME;
+const MyFourthComponentWithProps = class extends React.Component{
+  render(){
+    return (
+      <div>
+        {this.props.lists.map((list, i)=><ul key={'list-'+i}>
+          {list.map((item, j)=><li key={'item-'+i+'-'+'j'}>{item}</li>)}
+        </ul>)}
+      </div>
+    )
+    
+    /*
+      Alt skal pakkes inn i div. Bruker map første gang for å operere på listene, som begge skal pakkes inn i <ul>
+      elementene i listene (items) får vi tilgang til igjennom en ny map inne i den mappen vi allerede er i.
+      Pakker elementene i <li>. 
+      setter en unik key på dem.
+    */
 
+  }
+};
 
-
+/*  render(){
+    return(
+      <div>
+        {this.props.lists.map((list, i) =>
+          <ul key={'list-'+i}>
+            {list.map((item, j) =>
+              <li key={'item-'+i+'-'+j}>{item}</li>
+          )}
+          </ul>
+      )}
+    </div>
+    );
+  }*/
 
 
 
@@ -228,7 +265,15 @@ const MyFourthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MyFifthComponentWithProps = REPLACE_ME;
+const MyFifthComponentWithProps = class extends React.Component{
+  render(){
+    return(
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+};
 
 
 
@@ -273,7 +318,15 @@ const MyFifthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MySixthComponentWithProps = REPLACE_ME;
+const MySixthComponentWithProps = class extends React.Component{
+  render(){
+    return(
+      <div>
+        {this.props.showDetails && this.props.children}
+      </div>
+    )
+  }
+};
 
 
 
@@ -306,7 +359,16 @@ const MySixthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MySeventhComponentWithProps = REPLACE_ME;
+const MySeventhComponentWithProps = class extends React.Component{
+  render(){
+    return(
+      <div>
+        <h1>{this.props.title}</h1>
+        {this.props.children}
+      </div>
+    )
+  }
+};
 
 
 
@@ -353,7 +415,16 @@ const MySeventhComponentWithProps = REPLACE_ME;
  *
  */
 
-const MyEigthComponentWithProps = REPLACE_ME;
+const MyEigthComponentWithProps = class extends React.Component{
+  render(){
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        {this.props.showDetails ? this.props.children : <p>No details..</p>}
+      </div>
+    )
+  }
+};
 
 
 
