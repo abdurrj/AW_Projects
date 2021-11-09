@@ -7,18 +7,10 @@ class App extends React.Component {
 
     this.state = {
       pokemons: [],
-      filters:["", "fire", "water", "electric"],
+      filters:["", "fire", "water", "electric", "poison"],
       activeFilter: undefined
     }
   }
-
-/*  async getPokemons(){
-    let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-    let pokemons = await response.json();
-    this.setState({
-      pokemons:pokemons.results
-    })
-   }*/
 
   async getPokemons(){
     let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -32,19 +24,13 @@ class App extends React.Component {
     this.setState({
       pokemons: detailedList
     })
-/*    let detailedList = []
-    await pokemons.results
-      .map(pokemon=>fetch(pokemon.url)
-        .then(result=>result.json())
-        .then(p => detailedList.push(p.results)))
-    this.setState({
-      pokemons:detailedList
-    })*/
   }
 
   componentDidMount() {
     this.getPokemons();
   }
+
+
 
   displayResult(){
     let detailedList = this.state.pokemons
@@ -78,7 +64,7 @@ class App extends React.Component {
     );
   }
 
-  handleFilter(event){
+  filterTypes(event){
     let newValue = undefined;
     if (event.target.value!==""){
       newValue = event.target.value
@@ -90,7 +76,7 @@ class App extends React.Component {
 
   displayFilter(){
     return (
-      <select value={this.state.activeFilter} onChange={this.handleFilter.bind(this)}>
+      <select id="typeFilter" value={this.state.activeFilter} onChange={this.filterTypes.bind(this)}>
         {this.state.filters.map(filter=>{
           return <option value={filter}>{filter}</option>
           }
