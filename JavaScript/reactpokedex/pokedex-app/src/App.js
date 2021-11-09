@@ -7,13 +7,16 @@ class App extends React.Component {
 
     this.state = {
       pokemons: [],
-      filters:["", "fire", "water", "electric", "poison"],
-      activeFilter: undefined
+      filters:["Any", "normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "dragon", "steel", "fairy"],
+      activeFilter: undefined,
+      limitValue:151,
+      offsetValue:0
     }
   }
 
   async getPokemons(){
-    let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+
+    let response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=2000&offset=0')
     let pokemons = await response.json();
 
     let pokemonUrl = pokemons.results.map(pokemons => pokemons.url)
@@ -30,17 +33,15 @@ class App extends React.Component {
     this.getPokemons();
   }
 
-
-
   displayResult(){
-    let detailedList = this.state.pokemons
+    let detailedList = this.state.pokemons.slice(this.state.offsetValue, this.state.limitValue)
     let filter = this.state.activeFilter
     return(
       this.filteredList(detailedList, filter)
         .map((pokemon, index)=>{
         return(
         <div className="pokeDiv">
-          <p  className="pokeImage"><img src={pokemon.sprites.front_default}/></p>
+          <img className="pokeImage" id={pokemon.name + "-"+index} src={pokemon.sprites.front_default}/>
           <p className="pokeName">{pokemon.name}</p>
         </div>
         )
@@ -66,7 +67,7 @@ class App extends React.Component {
 
   filterTypes(event){
     let newValue = undefined;
-    if (event.target.value!==""){
+    if (event.target.value!=="Any"){
       newValue = event.target.value
     }
     this.setState({
@@ -74,14 +75,57 @@ class App extends React.Component {
     })
   }
 
+  filterOffset(event){
+    this.setState({
+      offsetValue: event.target.value-1
+    })
+  }
+
+  filterLimit(event){
+    this.setState({
+      limitValue: event.target.value
+    })
+  }
+
   displayFilter(){
     return (
-      <select id="typeFilter" value={this.state.activeFilter} onChange={this.filterTypes.bind(this)}>
-        {this.state.filters.map(filter=>{
-          return <option value={filter}>{filter}</option>
-          }
-        )}
-      </select>
+      <div id="filters">
+        <div id="typeFilter" className="filterClass">
+          <label for="typeFilter">Type: </label>
+          <select
+              id="typeFilter"
+              value={this.state.activeFilter}
+              onChange={this.filterTypes.bind(this)}
+          >
+                {this.state.filters.map(filter=>{
+                  return <option value={filter}>{filter}</option>
+                  })
+                }
+          </select>
+        </div>
+        <div className="filterClass">
+          <label for="startFrom">From: </label>
+            <input
+                id="startFrom"
+                type="number"
+                min="1"
+                max={this.state.limitValue}
+                defaultValue={this.state.offsetValue+1}
+                onChange={this.filterOffset.bind(this)}
+            />
+        </div>
+        <div className="filterClass">
+          <label for="limitView">To: </label>
+            <input
+                id="limitView"
+                type="number"
+                min={this.state.offsetValue+1}
+                max={this.state.pokemons.length}
+                defaultValue={151}
+                onChange={this.filterLimit.bind(this)}
+            />
+        </div>
+      </div>
     )
   }
 
@@ -89,11 +133,9 @@ class App extends React.Component {
 
   render(){
     return (
-      <div >
-        <div className="filterfunksjon">
-          filter: {this.displayFilter()}
-        </div>
-        <div className="main">
+      <div className="main">
+        {this.displayFilter()}
+        <div className="pokeList">
           {this.displayResult()}
         </div>
       </div>

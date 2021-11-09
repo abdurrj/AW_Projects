@@ -10,66 +10,58 @@ body{
 .pokeDiv{
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
   background-color: white;
+  text-align: center;
   width: 150px;
   height: 150px;
-  margin: 10px
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 .pokeName{
-  margin-top: 0;
-  width: 150px;
-  background-color: lightgray;
+  margin-bottom: 5px;
+  width: 90%;
+  padding: 2px 5px;
+  border-radius: 20px;
+  background-color: orange;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .pokeImage{
   margin-bottom: 0;
+  max-width: 100px;
 }
 
-.main{
+.pokeList{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 80vw;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#filters{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: calc(80vw - 10px);
+  background-color: orange;
+  height: 50px;
+  position: fixed;
+  margin-top: -50px;
+  margin-left: 5px;
   color: white;
+  font-weight: bold;
+  padding: 0 20px
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#filters input{
+  text-align: right;
+  max-width: 60px;
 }
