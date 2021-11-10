@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1 id="title">
+
+</h1>
+<script>
+  var counter=60;
+  var printTime = function(delay){
+    var element = document.getElementById("title")
+    setInterval(function (){
+      if (counter>0){
+        element.innerHTML = "Self destruct initiated. Time left: " +counter--;
+        if (counter<20){
+          element.style.color='red'
+        }
+      }
+      else{
+        element.innerHTML = "boom?"
+        clearInterval(printTime)
+      }
+    }, delay*1000)
+  }
+  printTime(1);
+  
+</script>
+</body>
+</html>
