@@ -10,7 +10,8 @@ class App extends React.Component {
       filters:["Any", "normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "dragon", "steel", "fairy"],
       activeFilter: undefined,
       limitValue:151,
-      offsetValue:0
+      offsetValue:0,
+      namefilter:""
     }
   }
 
@@ -62,7 +63,13 @@ class App extends React.Component {
         }
         return pass;
       }
-    );
+    ).filter(pokemon => {
+      if (this.state.namefilter==="" || pokemon.name.includes(this.state.namefilter)){
+        return true;
+      }
+      }
+    )
+      ;
   }
 
   filterTypes(event){
@@ -84,6 +91,17 @@ class App extends React.Component {
   filterLimit(event){
     this.setState({
       limitValue: event.target.value
+    })
+  }
+
+  filterName(event){
+    let name = ""
+    console.log(event.target.value)
+    if (event.target.value!==""){
+      name = event.target.value;
+    }
+    this.setState({
+      namefilter:name
     })
   }
 
@@ -124,6 +142,14 @@ class App extends React.Component {
                 defaultValue={151}
                 onChange={this.filterLimit.bind(this)}
             />
+        </div>
+        <div className="filterClass">
+          <label for="nameSearch">Name: </label>
+          <input
+            id="nameSearch"
+            type="text"
+            onChange={this.filterName.bind(this)}
+          />
         </div>
       </div>
     )
