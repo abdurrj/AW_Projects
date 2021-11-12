@@ -8,8 +8,6 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class RestTemplateController {
 
-    public RestTemplateController() {
-    }
 
     @GetMapping("/mvcquote")
     public String getQuote(RestTemplate restTemplate){
