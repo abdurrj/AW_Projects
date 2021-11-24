@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="269258b8-fcc1-4440-93d5-3bfad3f79475" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/quizApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/quizApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/QuizApp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises-functions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercises-functions/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +49,7 @@
       <updated>1635933149205</updated>
       <workItem from="1635933150847" duration="16867000" />
       <workItem from="1636124509021" duration="155000" />
+      <workItem from="1637141771752" duration="21000" />
     </task>
     <servers />
   </component>
@@ -69,6 +66,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

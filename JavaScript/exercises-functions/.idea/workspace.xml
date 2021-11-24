@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4c15348-f0fc-49d6-92be-d585cc9c3a4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AsyncJavaScript/Exercise1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AsyncJavaScript/maps-starting-point.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quizApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizApp/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a4c15348-f0fc-49d6-92be-d585cc9c3a4b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +30,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636030351144</updated>
       <workItem from="1636030352837" duration="11000" />
+      <workItem from="1637141752146" duration="4000" />
     </task>
     <servers />
   </component>
