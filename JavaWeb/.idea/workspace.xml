@@ -2,9 +2,244 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22269a77-5b81-4667-a6ed-4769e6e3e5b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../CheckPoints/Checkpoint_4/src/main/resources/templates/addnumbers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CheckPoints/Checkpoint_4/src/main/resources/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CheckPoints/Checkpoint_4/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/Account.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/out/production/Account/account/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/out/production/Account/account/TestATM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/src/account/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Account/src/account/TestATM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/AmazonProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/AmazonModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/ChildrenBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/IncorrectProductIdException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/MovieGenre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/MovieWithDirector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazingPackage/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/AmazonModule/src/AmazonProject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/ChildrenBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/IncorrectProductIdException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/MovieGenre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/MovieWithDirector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazingPackage/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AmazonProject/out/production/AmazonModule/AmazonProject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hovedprosjektforslag.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DagEnOppgFem/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DagEnOppgFemV2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/src/main/java/com/example/randomvitsabdur/RandomVits.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/src/main/java/com/example/randomvitsabdur/RandomVitsAbdurApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomVitsAbdur/src/test/java/com/example/randomvitsabdur/RandomVitsAbdurApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/src/main/java/com/example/mavenavhengig/MavenavhengigApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenavhengig/src/test/java/com/example/mavenavhengig/MavenavhengigApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/Kortstokk.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/MainModule/MainModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/MainModule/src/CardGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/MainModule/src/GameOfWar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/MainModule/src/PlayingCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/MainModule/src/PlayingCardDeck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/out/production/MainModule/CardGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/out/production/MainModule/GameOfWar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/out/production/MainModule/PlayingCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kortstokk/out/production/MainModule/PlayingCardDeck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/8b_School_Schema/8b_schema_and_data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/8b_School_Schema/OppgSet 8b - view.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/AcademySchema/OppgsSet 7 dag - 3 Academy konsulent Create and link tables.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/AcademySchema/OppgsSet 7 dag - 3 academykonsulent og kurs.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Checkpoint_5/buildDatabase.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Checkpoint_5/checkpoint_5-Page-2.drawio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Checkpoint_5/checkpoint_5.drawio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Checkpoint_5/queryDatabase.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Checkpoint_5_Abdur.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/java/com/example/datasource/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/java/com/example/datasource/CityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/java/com/example/datasource/CityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/java/com/example/datasource/Country.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/java/com/example/datasource/DataSourceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/main/resources/templates/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/DataSource/src/test/java/com/example/datasource/DataSourceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/Databaser 10 - Øvelser Normalisering.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/java/com/example/JDBC/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/java/com/example/JDBC/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/java/com/example/JDBC/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/java/com/example/JDBC/JdbcApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/resources/templates/addBook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/main/resources/templates/addBookReturn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBCStarter-master/src/test/java/com/example/JDBC/JdbcApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/java/com/cr/CrApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/java/com/cr/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/java/com/cr/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JDBC/JDBC_Spring_intro/src/test/java/com/cr/CrApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/BookStoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/java/com/example/BookStore/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/addcustomer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/book.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/books.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/customer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/customers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/main/resources/templates/editbook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreStarter-master-2/src/test/java/com/example/BookStore/BookStoreApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/BookStoreApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/BookValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/java/com/example/BookStore/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/templates/book.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/templates/books.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/templates/customerForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/templates/customers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/main/resources/templates/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPABookStoreValidationStarter/src/test/java/com/example/BookStore/BookStoreApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/java/com/example/JpaDemo/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/java/com/example/JpaDemo/DogRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/java/com/example/JpaDemo/JpaDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/java/com/example/JpaDemo/Owner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/java/com/example/JpaDemo/OwnerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/JPAStarter-master/src/test/java/com/example/JpaDemo/JpaDemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/IntelliJDatabase/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgSet 4 dag - 2 Nøkler.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgSet 5 dag - 2 join.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgSet 6 dag - 2 subquery.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgSet2 dag - 1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgSet3 dag - 1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgaveSet1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgaveSet2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/OppgaveSet3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/forelesning join.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/quiz.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/World_Schema/world_schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/checkpint6test.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MySQL/checkpoint6testdata.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/.idea/zzTestFolder.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/Module1/Module1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/Module1/src/Checkpoint 2 N1 med kommentarer.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/Module1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/Module1/src/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/out/production/Module1/Checkpoint 2 N1 med kommentarer.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/out/production/Module1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../zzTestFolder/out/production/Module1/Room.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,17 +257,22 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1zDKy7yrITB64DzyeaAP9GtjK5m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,10 +283,23 @@
       <updated>1633677469522</updated>
       <workItem from="1633677470949" duration="12000" />
       <workItem from="1633678217399" duration="73000" />
+      <workItem from="1652526485578" duration="641000" />
+      <workItem from="1652528167700" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
